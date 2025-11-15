@@ -31,24 +31,54 @@
 
         /* Header */
         h1 {
-            font-size: 2.8rem;
-            font-weight: 700;
-            margin-bottom: 60px;
-            color: #1a202c;
-            border-bottom: 4px solid #667eea;
-            padding-bottom: 20px;
-            letter-spacing: -0.5px;
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 50px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-align: center;
+            letter-spacing: 2px;
+            position: relative;
+            padding-bottom: 30px;
+        }
+
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            border-radius: 2px;
         }
 
         h2 {
-            font-size: 2rem;
-            font-weight: 700;
+            font-size: 1.5rem;
+            font-weight: 800;
             margin-top: 60px;
             margin-bottom: 30px;
-            color: #1a202c;
-            border-left: 6px solid #667eea;
-            padding-left: 20px;
-            letter-spacing: -0.3px;
+            color: #667eea;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-align: center;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: #667eea;
+            border-radius: 2px;
         }
 
         h3 {
@@ -296,13 +326,15 @@
             }
 
             h1 {
-                font-size: 2.2rem;
+                font-size: 2.5rem;
                 margin-bottom: 40px;
+                letter-spacing: 1px;
             }
 
             h2 {
-                font-size: 1.6rem;
+                font-size: 1.3rem;
                 margin-top: 40px;
+                letter-spacing: 2px;
             }
 
             .profile {
@@ -335,13 +367,23 @@
 
         @media print {
             body {
-                background-color: white;
+                background: white;
                 padding: 0;
             }
 
             .container {
                 box-shadow: none;
                 padding: 20px;
+            }
+
+            h1 {
+                color: #667eea;
+                -webkit-text-fill-color: #667eea;
+            }
+
+            .link-card {
+                background: #f7fafc;
+                color: #333;
             }
 
             .link-card:hover {
@@ -353,9 +395,9 @@
 </head>
 <body>
     <div class="container">
-        <h1>職務経歴</h1>
+        <h1>Profile & Works</h1>
 
-        <h2>PROFILE</h2>
+        <h2>Profile</h2>
         <div class="profile">
             <div class="profile-image">
                 <img src="assets/IMG_2886.jpeg" alt="伊藤 達章">
@@ -401,7 +443,7 @@
 
         <hr>
 
-        <h2>CARRIER</h2>
+        <h2>Career</h2>
 
         <div class="career-item">
             <div class="career-header">
@@ -449,7 +491,7 @@
             </table>
         </div>
 
-        <h3>副業</h3>
+        <h3 style="text-align: center; color: #667eea; font-weight: 700; margin-top: 50px; margin-bottom: 30px;">副業 / Side Projects</h3>
 
         <div class="career-item">
             <div class="career-header">
