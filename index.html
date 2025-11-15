@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>職務経歴 - 伊藤 達章</title>
+    <style>
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Header */
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            border-bottom: 3px solid #333;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            border-left: 5px solid #4CAF50;
+            padding-left: 15px;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        /* Profile Section */
+        .profile {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 40px;
+            align-items: flex-start;
+        }
+
+        .profile-image {
+            flex-shrink: 0;
+        }
+
+        .profile-image img {
+            width: 180px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-text {
+            flex: 1;
+        }
+
+        .profile-text h3 {
+            margin-top: 0;
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        .profile-text p {
+            margin-bottom: 12px;
+        }
+
+        /* Career Section */
+        .career-item {
+            margin-bottom: 35px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .career-item:last-child {
+            border-bottom: none;
+        }
+
+        .career-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .company-name {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #2196F3;
+        }
+
+        .company-name a {
+            color: #2196F3;
+            text-decoration: none;
+        }
+
+        .company-name a:hover {
+            text-decoration: underline;
+        }
+
+        .period {
+            color: #666;
+            font-size: 0.95rem;
+            font-style: italic;
+        }
+
+        .position {
+            color: #555;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        /* Lists */
+        ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        ul li {
+            margin-bottom: 8px;
+        }
+
+        /* Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.95rem;
+        }
+
+        table tr {
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        table td {
+            padding: 12px 8px;
+        }
+
+        table td:first-child {
+            font-weight: bold;
+            width: 120px;
+            color: #555;
+        }
+
+        /* Links Section */
+        .links {
+            display: flex;
+            gap: 30px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .link-card {
+            flex: 1;
+            min-width: 250px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #333;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .link-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .link-card h3 {
+            margin: 0 0 10px 0;
+            color: #2196F3;
+        }
+
+        .link-card p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Details/Summary */
+        details {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+        }
+
+        summary {
+            font-size: 1.3rem;
+            font-weight: bold;
+            cursor: pointer;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        summary:hover {
+            color: #2196F3;
+        }
+
+        hr {
+            border: none;
+            border-top: 2px solid #e0e0e0;
+            margin: 40px 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .profile {
+                flex-direction: column;
+            }
+
+            .profile-image img {
+                width: 150px;
+            }
+
+            .career-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .links {
+                flex-direction: column;
+            }
+
+            table td:first-child {
+                width: 100px;
+            }
+        }
+
+        @media print {
+            body {
+                background-color: white;
+                padding: 0;
+            }
+
+            .container {
+                box-shadow: none;
+                padding: 20px;
+            }
+
+            .link-card:hover {
+                transform: none;
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>職務経歴</h1>
+
+        <h2>PROFILE</h2>
+        <div class="profile">
+            <div class="profile-image">
+                <img src="assets/職務経歴/IMG_2886.jpeg" alt="伊藤 達章">
+            </div>
+            <div class="profile-text">
+                <h3>伊藤 達章 (Ito Tatsuaki)</h3>
+                <p>大学卒業後、訪日外国人向けNPO法人を立ち上げる。<br>
+                コンテンツマーケティングと職人と旅行者を繋ぐツアーの両軸を担当。</p>
+                <p>その後法人向け不動産仲介会社のPM兼バックエンドエンジニアとして所属。</p>
+                <p>その後フリーランスとしてバックエンドエンジニア, CS開発チームリーダーなどを経る。</p>
+                <p>現在は株式会社グロービスにジョイン。<br>
+                Eラーニングサービスの法人担当者向け機能開発チームに所属。<br>
+                メインの役割はバックエンドエンジニア兼スクラムマスター。<br>
+                PM, エンジニア, デザイナーのメンバーと共に要件定義・設計・実装・テストなどPJを推進するために必要な業務横断的に担当。</p>
+            </div>
+        </div>
+
+        <hr>
+
+        <h2>CARRIER</h2>
+
+        <div class="career-item">
+            <div class="career-header">
+                <div class="company-name"><a href="https://globis.co.jp/" target="_blank">株式会社グロービス</a></div>
+                <div class="period">2022/05 - 現在</div>
+            </div>
+            <div class="position">バックエンドエンジニア / スクラムマスター / サブリーダー</div>
+            <ul>
+                <li>正社員として参画</li>
+                <li><a href="https://globis.co.jp/services/elearning/" target="_blank">グロービス学び放題</a>の法人管理画面・受講画面の開発
+                    <ul>
+                        <li>バックエンド・フロントエンド開発(Ruby on Rails, AWS, React)</li>
+                    </ul>
+                </li>
+                <li>スクラムマスター</li>
+                <li>法人向け開発チームのサブリーダー, バックエンド開発のリード</li>
+                <li>要件定義・テストなど開発に必要な調整</li>
+                <li>フロー効率を上げるための施策として認識の齟齬を避けるための施策実施</li>
+            </ul>
+            <table>
+                <tr>
+                    <td>言語</td>
+                    <td>Ruby 3.2.2, TypeScript</td>
+                </tr>
+                <tr>
+                    <td>FW</td>
+                    <td>Ruby on Rails 6系, 7系, React</td>
+                </tr>
+                <tr>
+                    <td>インフラ</td>
+                    <td>AWS</td>
+                </tr>
+                <tr>
+                    <td>DB</td>
+                    <td>MySQL</td>
+                </tr>
+                <tr>
+                    <td>その他</td>
+                    <td>Datadog, Sentry, GitHub, Sendgrid, Hubspot</td>
+                </tr>
+            </table>
+        </div>
+
+        <h3>副業</h3>
+
+        <div class="career-item">
+            <div class="career-header">
+                <div class="company-name"><a href="https://wed.company/" target="_blank">株式会社WED</a></div>
+                <div class="period">2025/05 - 現在</div>
+            </div>
+            <div class="position">エンジニア採用/業務改善</div>
+            <ul>
+                <li>主にエンジニア採用のスカウトソーシング / AIを活用したスカウト自動化</li>
+                <li>人事業務改善を担当</li>
+            </ul>
+        </div>
+
+        <div class="career-item">
+            <div class="career-header">
+                <div class="company-name"><a href="https://ampfy.co.jp/" target="_blank">株式会社ampfy</a></div>
+                <div class="period">2024/03 - 2024/05</div>
+            </div>
+            <div class="position">プロダクト開発部</div>
+            <ul>
+                <li>オンライン投薬サービスの開発
+                    <ul>
+                        <li>React/TypeScriptでのフロントエンド開発</li>
+                        <li>Ruby on Railsでのバックエンド開発</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="career-item">
+            <div class="career-header">
+                <div class="company-name"><a href="https://wed.company/" target="_blank">株式会社WED</a></div>
+                <div class="period">2023/06 - 2023/11</div>
+            </div>
+            <div class="position">エンジニア採用/業務改善</div>
+            <ul>
+                <li>主にエンジニア採用のスカウトソーシング</li>
+                <li>人事業務改善を担当</li>
+            </ul>
+        </div>
+
+        <hr>
+
+        <details open>
+            <summary>現職より前の経歴</summary>
+
+            <div class="career-item">
+                <h3>フリーランスエンジニア</h3>
+                <div class="period">2020/01 ~ 2022/02</div>
+                <p style="margin: 10px 0; color: #666; font-size: 0.9rem;">※ 契約上案件名のみのものも含まれます</p>
+                <ul>
+                    <li>不動産業者向け問い合わせ対応SaaSの開発, CS開発チームリーダー(Golang, Nuxt.js)</li>
+                    <li><a href="https://kidsline.me/" target="_blank">ベビーシッターマッチングC2Cプラットフォーム</a>のサーバーサイド開発(Ruby on Rails)</li>
+                    <li><a href="https://www.hitomawari.jp/" target="_blank">労務・人事向けHR SaaS</a>のAPI開発(Ruby on Rails)</li>
+                </ul>
+                <p style="margin: 15px 0 5px 0; font-weight: bold;">主に使っていた技術</p>
+                <table>
+                    <tr>
+                        <td>言語</td>
+                        <td>Ruby, Golang</td>
+                    </tr>
+                    <tr>
+                        <td>FW</td>
+                        <td>Ruby on Rails 5系, 6系</td>
+                    </tr>
+                    <tr>
+                        <td>インフラ</td>
+                        <td>AWS</td>
+                    </tr>
+                    <tr>
+                        <td>DB</td>
+                        <td>MySQL, PostgresQL</td>
+                    </tr>
+                    <tr>
+                        <td>その他</td>
+                        <td>GitHub, Figma</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="career-item">
+                <h3>株式会社オフィスバンク</h3>
+                <div class="period">2018/05 ~ 2020/01</div>
+                <div class="position">情報メディアデザイン部</div>
+                <ul>
+                    <li>外注していた社内向け物件管理システムの内製化</li>
+                    <li>社内初エンジニア組織の創設</li>
+                    <li>プロダクトマネジメント</li>
+                    <li>バックエンド開発</li>
+                </ul>
+                <p style="margin: 15px 0 5px 0; font-weight: bold;">主な使用技術</p>
+                <table>
+                    <tr>
+                        <td>言語</td>
+                        <td>Ruby</td>
+                    </tr>
+                    <tr>
+                        <td>FW</td>
+                        <td>Ruby on Rails 5系</td>
+                    </tr>
+                    <tr>
+                        <td>インフラ</td>
+                        <td>AWS</td>
+                    </tr>
+                    <tr>
+                        <td>DB</td>
+                        <td>MySQL</td>
+                    </tr>
+                    <tr>
+                        <td>その他</td>
+                        <td>GitHub, Figma</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="career-item">
+                <h3>NPO法人SAMURAI MEETUPS</h3>
+                <div class="period">2014/04 - 2018/04</div>
+                <div class="position">Marketingチーム</div>
+                <ul>
+                    <li>海外向けに日本の伝統文化を発信するWebメディアの作成・運営(WordPress)</li>
+                    <li>Web広告のディレクション(Google広告)</li>
+                    <li>記事のディレクション(英語・フランス語のみ)</li>
+                    <li>訪日旅行者と日本の職人を繋ぐツアーの運営</li>
+                </ul>
+            </div>
+
+            <div class="career-item">
+                <h3>中央大学 法学部 法律学科卒業</h3>
+                <div class="period">2014/03</div>
+            </div>
+        </details>
+
+        <h2>Links</h2>
+        <div class="links">
+            <a href="https://lapras.com/public/IYHS3XI" target="_blank" class="link-card">
+                <h3>LAPRAS</h3>
+                <p>エンジニアのスキル・経歴をオープンな情報から自動生成</p>
+            </a>
+            <a href="https://note.com/gratachu" target="_blank" class="link-card">
+                <h3>note</h3>
+                <p>趣味の開発/記事を読んで得たこと/資格取得etc</p>
+            </a>
+            <a href="https://github.com/gratachu" target="_blank" class="link-card">
+                <h3>GitHub</h3>
+                <p>gratachu - 16 repositories</p>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
