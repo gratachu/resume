@@ -128,44 +128,13 @@
         }
 
         /* Career Section */
-        .career-section {
-            position: relative;
-            padding-left: 60px;
-        }
-
-        .career-section::before {
-            content: '';
-            position: absolute;
-            left: 20px;
-            top: 30px;
-            bottom: 30px;
-            width: 3px;
-            background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
-            border-radius: 2px;
-        }
-
         .career-item {
-            position: relative;
             margin-bottom: 50px;
             padding: 30px;
             background: linear-gradient(to right, #f7fafc 0%, #ffffff 100%);
             border-radius: 12px;
             border-left: 4px solid #667eea;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-        }
-
-        .career-item::before {
-            content: '';
-            position: absolute;
-            left: -54px;
-            top: 35px;
-            width: 16px;
-            height: 16px;
-            background: white;
-            border: 4px solid #667eea;
-            border-radius: 50%;
-            box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
-            z-index: 1;
         }
 
         .career-item:last-child {
@@ -382,24 +351,8 @@
                 align-items: flex-start;
             }
 
-            .career-section {
-                padding-left: 30px;
-            }
-
-            .career-section::before {
-                left: 10px;
-                width: 2px;
-            }
-
             .career-item {
                 padding: 20px;
-            }
-
-            .career-item::before {
-                left: -24px;
-                width: 12px;
-                height: 12px;
-                border-width: 3px;
             }
 
             .links {
@@ -492,12 +445,11 @@
 
         <h2>Career</h2>
 
-        <div class="career-section">
-            <div class="career-item">
-                <div class="career-header">
-                    <div class="company-name"><a href="https://globis.co.jp/" target="_blank">株式会社グロービス</a></div>
-                    <div class="period">2022/05 - 現在</div>
-                </div>
+        <div class="career-item">
+            <div class="career-header">
+                <div class="company-name"><a href="https://globis.co.jp/" target="_blank">株式会社グロービス</a></div>
+                <div class="period">2022/05 - 現在</div>
+            </div>
             <div class="position">バックエンドエンジニア / スクラムマスター / サブリーダー</div>
 
             <div class="section-label">担当業務</div>
@@ -586,107 +538,104 @@
                 <li>人事業務改善を担当</li>
             </ul>
         </div>
-        </div>
 
         <hr>
 
         <details open>
             <summary>現職より前の経歴</summary>
 
-            <div class="career-section">
-                <div class="career-item">
-                    <h3>フリーランスエンジニア</h3>
-                    <div class="period">2020/01 ~ 2022/02</div>
-                    <p style="margin: 10px 0; color: #718096; font-size: 0.9rem;">※ 契約上案件名のみのものも含まれます</p>
+            <div class="career-item">
+                <h3>フリーランスエンジニア</h3>
+                <div class="period">2020/01 ~ 2022/02</div>
+                <p style="margin: 10px 0; color: #718096; font-size: 0.9rem;">※ 契約上案件名のみのものも含まれます</p>
 
-                    <div class="section-label">担当業務</div>
-                    <ul>
-                        <li>不動産業者向け問い合わせ対応SaaSの開発, CS開発チームリーダー(Golang, Nuxt.js)</li>
-                        <li><a href="https://kidsline.me/" target="_blank">ベビーシッターマッチングC2Cプラットフォーム</a>のサーバーサイド開発(Ruby on Rails)</li>
-                        <li><a href="https://www.hitomawari.jp/" target="_blank">労務・人事向けHR SaaS</a>のAPI開発(Ruby on Rails)</li>
-                    </ul>
+                <div class="section-label">担当業務</div>
+                <ul>
+                    <li>不動産業者向け問い合わせ対応SaaSの開発, CS開発チームリーダー(Golang, Nuxt.js)</li>
+                    <li><a href="https://kidsline.me/" target="_blank">ベビーシッターマッチングC2Cプラットフォーム</a>のサーバーサイド開発(Ruby on Rails)</li>
+                    <li><a href="https://www.hitomawari.jp/" target="_blank">労務・人事向けHR SaaS</a>のAPI開発(Ruby on Rails)</li>
+                </ul>
 
-                    <div class="section-label">使用技術</div>
-                    <table>
-                        <tr>
-                            <td>言語</td>
-                            <td>Ruby, Golang</td>
-                        </tr>
-                        <tr>
-                            <td>FW</td>
-                            <td>Ruby on Rails 5系, 6系</td>
-                        </tr>
-                        <tr>
-                            <td>インフラ</td>
-                            <td>AWS</td>
-                        </tr>
-                        <tr>
-                            <td>DB</td>
-                            <td>MySQL, PostgresQL</td>
-                        </tr>
-                        <tr>
-                            <td>その他</td>
-                            <td>GitHub, Figma</td>
-                        </tr>
-                    </table>
-                </div>
+                <div class="section-label">使用技術</div>
+                <table>
+                    <tr>
+                        <td>言語</td>
+                        <td>Ruby, Golang</td>
+                    </tr>
+                    <tr>
+                        <td>FW</td>
+                        <td>Ruby on Rails 5系, 6系</td>
+                    </tr>
+                    <tr>
+                        <td>インフラ</td>
+                        <td>AWS</td>
+                    </tr>
+                    <tr>
+                        <td>DB</td>
+                        <td>MySQL, PostgresQL</td>
+                    </tr>
+                    <tr>
+                        <td>その他</td>
+                        <td>GitHub, Figma</td>
+                    </tr>
+                </table>
+            </div>
 
-                <div class="career-item">
-                    <h3>株式会社オフィスバンク</h3>
-                    <div class="period">2018/05 ~ 2020/01</div>
-                    <div class="position">情報メディアデザイン部</div>
+            <div class="career-item">
+                <h3>株式会社オフィスバンク</h3>
+                <div class="period">2018/05 ~ 2020/01</div>
+                <div class="position">情報メディアデザイン部</div>
 
-                    <div class="section-label">担当業務</div>
-                    <ul>
-                        <li>外注していた社内向け物件管理システムの内製化</li>
-                        <li>社内初エンジニア組織の創設</li>
-                        <li>プロダクトマネジメント</li>
-                        <li>バックエンド開発</li>
-                    </ul>
+                <div class="section-label">担当業務</div>
+                <ul>
+                    <li>外注していた社内向け物件管理システムの内製化</li>
+                    <li>社内初エンジニア組織の創設</li>
+                    <li>プロダクトマネジメント</li>
+                    <li>バックエンド開発</li>
+                </ul>
 
-                    <div class="section-label">使用技術</div>
-                    <table>
-                        <tr>
-                            <td>言語</td>
-                            <td>Ruby</td>
-                        </tr>
-                        <tr>
-                            <td>FW</td>
-                            <td>Ruby on Rails 5系</td>
-                        </tr>
-                        <tr>
-                            <td>インフラ</td>
-                            <td>AWS</td>
-                        </tr>
-                        <tr>
-                            <td>DB</td>
-                            <td>MySQL</td>
-                        </tr>
-                        <tr>
-                            <td>その他</td>
-                            <td>GitHub, Figma</td>
-                        </tr>
-                    </table>
-                </div>
+                <div class="section-label">使用技術</div>
+                <table>
+                    <tr>
+                        <td>言語</td>
+                        <td>Ruby</td>
+                    </tr>
+                    <tr>
+                        <td>FW</td>
+                        <td>Ruby on Rails 5系</td>
+                    </tr>
+                    <tr>
+                        <td>インフラ</td>
+                        <td>AWS</td>
+                    </tr>
+                    <tr>
+                        <td>DB</td>
+                        <td>MySQL</td>
+                    </tr>
+                    <tr>
+                        <td>その他</td>
+                        <td>GitHub, Figma</td>
+                    </tr>
+                </table>
+            </div>
 
-                <div class="career-item">
-                    <h3>NPO法人SAMURAI MEETUPS</h3>
-                    <div class="period">2014/04 - 2018/04</div>
-                    <div class="position">Marketingチーム</div>
+            <div class="career-item">
+                <h3>NPO法人SAMURAI MEETUPS</h3>
+                <div class="period">2014/04 - 2018/04</div>
+                <div class="position">Marketingチーム</div>
 
-                    <div class="section-label">担当業務</div>
-                    <ul>
-                        <li>海外向けに日本の伝統文化を発信するWebメディアの作成・運営(WordPress)</li>
-                        <li>Web広告のディレクション(Google広告)</li>
-                        <li>記事のディレクション(英語・フランス語のみ)</li>
-                        <li>訪日旅行者と日本の職人を繋ぐツアーの運営</li>
-                    </ul>
-                </div>
+                <div class="section-label">担当業務</div>
+                <ul>
+                    <li>海外向けに日本の伝統文化を発信するWebメディアの作成・運営(WordPress)</li>
+                    <li>Web広告のディレクション(Google広告)</li>
+                    <li>記事のディレクション(英語・フランス語のみ)</li>
+                    <li>訪日旅行者と日本の職人を繋ぐツアーの運営</li>
+                </ul>
+            </div>
 
-                <div class="career-item">
-                    <h3>中央大学 法学部 法律学科卒業</h3>
-                    <div class="period">2014/03</div>
-                </div>
+            <div class="career-item">
+                <h3>中央大学 法学部 法律学科卒業</h3>
+                <div class="period">2014/03</div>
             </div>
         </details>
 
