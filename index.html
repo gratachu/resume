@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>職務経歴 - 伊藤 達章</title>
+    <title>職務経歴 - Ito Tatsuaki</title>
     <style>
         /* Reset & Base Styles */
         * {
@@ -12,11 +12,29 @@
             box-sizing: border-box;
         }
 
+        :root {
+            --bg-start: #f5f7fb;
+            --bg-end: #e6edf5;
+            --text-main: #0f172a;
+            --text-sub: #334155;
+            --accent-strong: #2563eb;
+            --accent-soft: #0ea5e9;
+            --muted-surface: #f3f6fc;
+            --chip-bg: #e5edff;
+            --border: #d8e2f0;
+            --shadow-strong: rgba(15, 23, 42, 0.18);
+            --shadow-soft: rgba(37, 99, 235, 0.14);
+            --period-bg: #edf2f7;
+            --period-text: #475569;
+            --warning-bg: #fff8e1;
+            --warning-border: #f6c244;
+        }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
             line-height: 1.8;
-            color: #2c3e50;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: var(--text-main);
+            background: linear-gradient(135deg, var(--bg-start) 0%, var(--bg-end) 100%);
             padding: 40px 20px;
         }
 
@@ -26,7 +44,7 @@
             background-color: white;
             padding: 60px;
             border-radius: 16px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 20px 60px var(--shadow-strong);
         }
 
         /* Header */
@@ -34,7 +52,7 @@
             font-size: 3.5rem;
             font-weight: 800;
             margin-bottom: 50px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, var(--accent-soft) 0%, var(--accent-strong) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -52,7 +70,7 @@
             transform: translateX(-50%);
             width: 100px;
             height: 4px;
-            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(90deg, var(--accent-soft) 0%, var(--accent-strong) 100%);
             border-radius: 2px;
         }
 
@@ -61,7 +79,7 @@
             font-weight: 800;
             margin-top: 60px;
             margin-bottom: 30px;
-            color: #667eea;
+            color: var(--accent-strong);
             text-transform: uppercase;
             letter-spacing: 3px;
             text-align: center;
@@ -77,7 +95,7 @@
             transform: translateX(-50%);
             width: 60px;
             height: 3px;
-            background: #667eea;
+            background: var(--accent-strong);
             border-radius: 2px;
         }
 
@@ -86,7 +104,7 @@
             font-weight: 600;
             margin-top: 45px;
             margin-bottom: 20px;
-            color: #4a5568;
+            color: var(--text-sub);
         }
 
         /* Profile Section */
@@ -105,8 +123,8 @@
             width: 180px;
             height: auto;
             border-radius: 12px;
-            box-shadow: 0 8px 24px rgba(102, 126, 234, 0.25);
-            border: 3px solid #f7fafc;
+            box-shadow: 0 8px 24px rgba(14, 165, 233, 0.2);
+            border: 3px solid #ffffff;
         }
 
         .profile-text {
@@ -117,24 +135,24 @@
             margin-top: 0;
             font-size: 1.6rem;
             font-weight: 700;
-            color: #1a202c;
+            color: var(--text-main);
             margin-bottom: 16px;
         }
 
         .profile-text p {
             margin-bottom: 16px;
             line-height: 1.9;
-            color: #4a5568;
+            color: var(--text-sub);
         }
 
         /* Career Section */
         .career-item {
             margin-bottom: 50px;
             padding: 30px;
-            background: linear-gradient(to right, #f7fafc 0%, #ffffff 100%);
+            background: linear-gradient(120deg, var(--muted-surface) 0%, #ffffff 100%);
             border-radius: 12px;
-            border-left: 4px solid #667eea;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid var(--accent-strong);
+            box-shadow: 0 8px 18px rgba(15, 23, 42, 0.08);
         }
 
         .career-item:last-child {
@@ -153,32 +171,32 @@
         .company-name {
             font-size: 1.3rem;
             font-weight: 700;
-            color: #667eea;
+            color: var(--accent-strong);
         }
 
         .company-name a {
-            color: #667eea;
+            color: var(--accent-strong);
             text-decoration: none;
             transition: color 0.2s;
         }
 
         .company-name a:hover {
-            color: #764ba2;
+            color: var(--accent-soft);
             text-decoration: underline;
         }
 
         .period {
-            color: #718096;
+            color: var(--period-text);
             font-size: 0.95rem;
             font-weight: 500;
-            background: #edf2f7;
+            background: var(--period-bg);
             padding: 6px 14px;
             border-radius: 20px;
             white-space: nowrap;
         }
 
         .position {
-            color: #2d3748;
+            color: var(--text-main);
             font-weight: 600;
             font-size: 1.05rem;
             margin-bottom: 16px;
@@ -194,7 +212,7 @@
         ul li {
             margin-bottom: 10px;
             line-height: 1.8;
-            color: #4a5568;
+            color: var(--text-sub);
         }
 
         /* Section Labels */
@@ -204,12 +222,22 @@
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
-            color: #667eea;
-            background: #e6f0ff;
+            color: var(--accent-strong);
+            background: var(--chip-bg);
             padding: 4px 12px;
             border-radius: 4px;
             margin-top: 20px;
             margin-bottom: 8px;
+        }
+
+        .notice {
+            margin-top: 20px;
+            padding: 16px;
+            background: var(--warning-bg);
+            border-left: 4px solid var(--warning-border);
+            border-radius: 8px;
+            color: #7a4c00;
+            font-size: 0.95rem;
         }
 
         /* Table */
@@ -222,7 +250,7 @@
         }
 
         table tr {
-            border-bottom: 1px solid #e2e8f0;
+            border-bottom: 1px solid var(--border);
         }
 
         table tr:last-child {
@@ -236,14 +264,14 @@
         table td:first-child {
             font-weight: 700;
             width: 120px;
-            color: #667eea;
+            color: var(--accent-strong);
             font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
         table td:last-child {
-            color: #4a5568;
+            color: var(--text-sub);
         }
 
         /* Links Section */
@@ -260,17 +288,17 @@
             min-width: 280px;
             max-width: 400px;
             padding: 30px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, var(--accent-soft) 0%, var(--accent-strong) 100%);
             border-radius: 12px;
             text-decoration: none;
             color: white;
             transition: transform 0.3s, box-shadow 0.3s;
-            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+            box-shadow: 0 12px 32px var(--shadow-soft);
         }
 
         .link-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 12px 24px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 16px 36px rgba(37, 99, 235, 0.24);
         }
 
         .link-card h3 {
@@ -291,9 +319,9 @@
         details {
             margin-top: 40px;
             padding: 30px;
-            background: linear-gradient(to right, #f7fafc 0%, #ffffff 100%);
+            background: linear-gradient(to right, var(--muted-surface) 0%, #ffffff 100%);
             border-radius: 12px;
-            border: 1px solid #e2e8f0;
+            border: 1px solid var(--border);
         }
 
         summary {
@@ -301,19 +329,20 @@
             font-weight: 700;
             cursor: pointer;
             margin-bottom: 25px;
-            color: #2d3748;
+            color: var(--text-main);
             transition: color 0.2s;
         }
 
         summary:hover {
-            color: #667eea;
+            color: var(--accent-strong);
         }
 
         hr {
             border: none;
-            border-top: 1px solid #e2e8f0;
+            border-top: 1px solid var(--border);
             margin: 60px 0;
         }
+
 
         /* Responsive */
         @media (max-width: 768px) {
@@ -377,19 +406,73 @@
             }
 
             h1 {
-                color: #667eea;
-                -webkit-text-fill-color: #667eea;
+                color: var(--accent-strong);
+                -webkit-text-fill-color: var(--accent-strong);
             }
 
             .link-card {
                 background: #f7fafc;
-                color: #333;
+                color: var(--text-main);
             }
 
             .link-card:hover {
                 transform: none;
                 box-shadow: none;
             }
+        }
+
+        /* Favorite Products */
+        .products {
+            display: grid;
+            gap: 24px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            margin-top: 20px;
+        }
+
+        .product-card {
+            display: block;
+            padding: 24px;
+            background: linear-gradient(135deg, rgba(14, 165, 233, 0.06), rgba(37, 99, 235, 0.06));
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--text-main);
+            box-shadow: 0 10px 26px rgba(15, 23, 42, 0.08);
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent-strong);
+            box-shadow: 0 14px 32px rgba(37, 99, 235, 0.18);
+        }
+
+        .product-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 12px;
+        }
+
+        .product-name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--accent-strong);
+        }
+
+        .product-tag {
+            font-size: 0.85rem;
+            padding: 6px 10px;
+            background: var(--chip-bg);
+            color: var(--accent-strong);
+            border-radius: 999px;
+            font-weight: 600;
+        }
+
+        .product-card p {
+            margin: 0;
+            color: var(--text-sub);
+            line-height: 1.7;
         }
     </style>
 </head>
@@ -400,10 +483,10 @@
         <h2>Profile</h2>
         <div class="profile">
             <div class="profile-image">
-                <img src="assets/IMG_2886.jpeg" alt="伊藤 達章">
+                <img src="assets/IMG_2886.jpeg" alt="Ito Tatsuaki">
             </div>
             <div class="profile-text">
-                <h3>伊藤 達章 (Ito Tatsuaki)</h3>
+                <h3>Ito Tatsuaki</h3>
                 <p>大学卒業後、訪日外国人向けNPO法人を立ち上げる。<br>
                 コンテンツマーケティングと職人と旅行者を繋ぐツアーの両軸を担当。</p>
                 <p>その後法人向け不動産仲介会社のPM兼バックエンドエンジニアとして所属。</p>
@@ -435,7 +518,7 @@
                     <li>Duolingo 500日以上のストリーク (英語と韓国語)</li>
                 </ul>
 
-                <p style="margin-top: 20px; padding: 16px; background: #fff3cd; border-left: 4px solid #ffc107; border-radius: 8px; color: #856404; font-size: 0.95rem;">
+                <p class="notice">
                     <strong>※</strong> 家庭事情で熊本在住のため、フルリモート以外のお話は一旦お断りさせていただいております。
                 </p>
             </div>
@@ -491,7 +574,7 @@
             </table>
         </div>
 
-        <h3 style="text-align: center; color: #667eea; font-weight: 700; margin-top: 50px; margin-bottom: 30px;">副業 / Side Projects</h3>
+        <h3 style="text-align: center; color: var(--accent-strong); font-weight: 700; margin-top: 50px; margin-bottom: 30px;">副業 / Side Projects</h3>
 
         <div class="career-item">
             <div class="career-header">
@@ -547,7 +630,7 @@
             <div class="career-item">
                 <h3>フリーランスエンジニア</h3>
                 <div class="period">2020/01 ~ 2022/02</div>
-                <p style="margin: 10px 0; color: #718096; font-size: 0.9rem;">※ 契約上案件名のみのものも含まれます</p>
+                <p style="margin: 10px 0; color: var(--text-sub); font-size: 0.9rem;">※ 契約上案件名のみのものも含まれます</p>
 
                 <div class="section-label">担当業務</div>
                 <ul>
@@ -638,6 +721,17 @@
                 <div class="period">2014/03</div>
             </div>
         </details>
+
+        <h2>Favorite Products</h2>
+        <div class="products">
+            <a href="https://www.raycast.com/" target="_blank" class="product-card">
+                <div class="product-header">
+                    <div class="product-name">Raycast</div>
+                    <span class="product-tag">Launcher</span>
+                </div>
+                <p>キーボード操作だけでアプリ起動・検索・スニペット呼び出しが完結するのが好きで、タスクやメモの切り替えが視線移動なくサッと終わる点に助けられています。</p>
+            </a>
+        </div>
 
         <h2>Links</h2>
         <div class="links">
