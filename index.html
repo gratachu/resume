@@ -3,747 +3,735 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>職務経歴 - Ito Tatsuaki</title>
+    <title>Ito Tatsuaki - Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        /* Reset & Base Styles */
+        /* Variables */
+        :root {
+            --primary: #2563eb;
+            --primary-light: #60a5fa;
+            --primary-dark: #1e40af;
+            --secondary: #0ea5e9;
+            --bg-body: #f8fafc;
+            --bg-card: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --radius-md: 0.75rem;
+            --radius-lg: 1rem;
+        }
+
+        /* Reset & Base */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        :root {
-            --bg-start: #f5f7fb;
-            --bg-end: #e6edf5;
-            --text-main: #0f172a;
-            --text-sub: #334155;
-            --accent-strong: #2563eb;
-            --accent-soft: #0ea5e9;
-            --muted-surface: #f3f6fc;
-            --chip-bg: #e5edff;
-            --border: #d8e2f0;
-            --shadow-strong: rgba(15, 23, 42, 0.18);
-            --shadow-soft: rgba(37, 99, 235, 0.14);
-            --period-bg: #edf2f7;
-            --period-text: #475569;
-            --warning-bg: #fff8e1;
-            --warning-border: #f6c244;
-        }
-
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
-            line-height: 1.8;
+            font-family: 'Inter', 'Noto Sans JP', sans-serif;
+            background-color: var(--bg-body);
             color: var(--text-main);
-            background: linear-gradient(135deg, var(--bg-start) 0%, var(--bg-end) 100%);
-            padding: 40px 20px;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
         }
 
+        a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        /* Layout */
         .container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
-            background-color: white;
-            padding: 60px;
-            border-radius: 16px;
-            box-shadow: 0 20px 60px var(--shadow-strong);
+            padding: 0 20px;
+        }
+
+        section {
+            margin-bottom: 5rem;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        /* Staggered Animation Delays */
+        section:nth-child(1) { animation-delay: 0.1s; }
+        section:nth-child(2) { animation-delay: 0.2s; }
+        section:nth-child(3) { animation-delay: 0.3s; }
+        section:nth-child(4) { animation-delay: 0.4s; }
+        section:nth-child(5) { animation-delay: 0.5s; }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* Header */
+        header {
+            padding: 6rem 0 4rem;
+            text-align: center;
+        }
+
         h1 {
             font-size: 3.5rem;
             font-weight: 800;
-            margin-bottom: 50px;
-            background: linear-gradient(135deg, var(--accent-soft) 0%, var(--accent-strong) 100%);
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 50%, var(--secondary) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-align: center;
-            letter-spacing: 2px;
-            position: relative;
-            padding-bottom: 30px;
+            margin-bottom: 1rem;
+            display: inline-block;
         }
 
-        h1::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 4px;
-            background: linear-gradient(90deg, var(--accent-soft) 0%, var(--accent-strong) 100%);
-            border-radius: 2px;
+        .subtitle {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            font-weight: 500;
         }
 
+        /* Section Titles */
         h2 {
-            font-size: 1.5rem;
-            font-weight: 800;
-            margin-top: 60px;
-            margin-bottom: 30px;
-            color: var(--accent-strong);
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            text-align: center;
-            position: relative;
-            padding-bottom: 15px;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 2.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
         }
 
         h2::after {
             content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(to right, var(--border), transparent);
+        }
+
+        /* Profile */
+        .profile-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            padding: 3rem;
+            box-shadow: var(--shadow-lg);
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .profile-img-wrapper {
+            position: relative;
+        }
+
+        .profile-img-wrapper img {
+            width: 100%;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-md);
+            transition: transform 0.3s ease;
+        }
+
+        .profile-img-wrapper:hover img {
+            transform: scale(1.02);
+        }
+
+        .profile-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .profile-bio p {
+            margin-bottom: 1rem;
+            color: var(--text-muted);
+        }
+
+        .tags-group {
+            margin-top: 1.5rem;
+        }
+
+        .tags-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            background: #eff6ff;
+            color: var(--primary-dark);
+            padding: 0.25rem 0.75rem;
+            border-radius: 999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            border: 1px solid #dbeafe;
+        }
+
+        .notice {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background: #fffbeb;
+            border: 1px solid #fcd34d;
+            border-radius: var(--radius-md);
+            color: #92400e;
+            font-size: 0.875rem;
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        /* Career Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .timeline::before {
+            content: '';
             position: absolute;
+            left: 0;
+            top: 0;
             bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 3px;
-            background: var(--accent-strong);
+            width: 2px;
+            background: var(--border);
             border-radius: 2px;
         }
 
-        h3 {
-            font-size: 1.4rem;
-            font-weight: 600;
-            margin-top: 45px;
-            margin-bottom: 20px;
-            color: var(--text-sub);
+        .career-card {
+            position: relative;
+            background: var(--bg-card);
+            border-radius: var(--radius-md);
+            padding: 2rem;
+            margin-bottom: 2.5rem;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        /* Profile Section */
-        .profile {
-            display: flex;
-            gap: 40px;
-            margin-bottom: 60px;
-            align-items: flex-start;
+        .career-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-light);
         }
 
-        .profile-image {
-            flex-shrink: 0;
-        }
-
-        .profile-image img {
-            width: 180px;
-            height: auto;
-            border-radius: 12px;
-            box-shadow: 0 8px 24px rgba(14, 165, 233, 0.2);
-            border: 3px solid #ffffff;
-        }
-
-        .profile-text {
-            flex: 1;
-        }
-
-        .profile-text h3 {
-            margin-top: 0;
-            font-size: 1.6rem;
-            font-weight: 700;
-            color: var(--text-main);
-            margin-bottom: 16px;
-        }
-
-        .profile-text p {
-            margin-bottom: 16px;
-            line-height: 1.9;
-            color: var(--text-sub);
-        }
-
-        /* Career Section */
-        .career-item {
-            margin-bottom: 50px;
-            padding: 30px;
-            background: linear-gradient(120deg, var(--muted-surface) 0%, #ffffff 100%);
-            border-radius: 12px;
-            border-left: 4px solid var(--accent-strong);
-            box-shadow: 0 8px 18px rgba(15, 23, 42, 0.08);
-        }
-
-        .career-item:last-child {
-            margin-bottom: 0;
+        .timeline-dot {
+            position: absolute;
+            left: -2.45rem;
+            top: 2rem;
+            width: 1rem;
+            height: 1rem;
+            background: var(--bg-body);
+            border: 3px solid var(--primary);
+            border-radius: 50%;
+            z-index: 1;
         }
 
         .career-header {
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
+            align-items: baseline;
+            margin-bottom: 0.5rem;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 0.5rem;
         }
 
-        .company-name {
-            font-size: 1.3rem;
+        .company {
+            font-size: 1.25rem;
             font-weight: 700;
-            color: var(--accent-strong);
+            color: var(--primary-dark);
         }
 
-        .company-name a {
-            color: var(--accent-strong);
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-
-        .company-name a:hover {
-            color: var(--accent-soft);
+        .company:hover {
             text-decoration: underline;
         }
 
         .period {
-            color: var(--period-text);
-            font-size: 0.95rem;
-            font-weight: 500;
-            background: var(--period-bg);
-            padding: 6px 14px;
-            border-radius: 20px;
-            white-space: nowrap;
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            font-feature-settings: "tnum";
+            background: #f1f5f9;
+            padding: 0.25rem 0.75rem;
+            border-radius: 999px;
         }
 
-        .position {
-            color: var(--text-main);
+        .role {
+            font-size: 1rem;
             font-weight: 600;
-            font-size: 1.05rem;
-            margin-bottom: 16px;
-            margin-top: 12px;
-        }
-
-        /* Lists */
-        ul {
-            margin-left: 20px;
-            margin-bottom: 20px;
-        }
-
-        ul li {
-            margin-bottom: 10px;
-            line-height: 1.8;
-            color: var(--text-sub);
-        }
-
-        /* Section Labels */
-        .section-label {
-            display: inline-block;
-            font-size: 0.8rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--accent-strong);
-            background: var(--chip-bg);
-            padding: 4px 12px;
-            border-radius: 4px;
-            margin-top: 20px;
-            margin-bottom: 8px;
-        }
-
-        .notice {
-            margin-top: 20px;
-            padding: 16px;
-            background: var(--warning-bg);
-            border-left: 4px solid var(--warning-border);
-            border-radius: 8px;
-            color: #7a4c00;
-            font-size: 0.95rem;
-        }
-
-        /* Table */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 24px 0;
-            font-size: 0.95rem;
-            background: white;
-        }
-
-        table tr {
-            border-bottom: 1px solid var(--border);
-        }
-
-        table tr:last-child {
-            border-bottom: none;
-        }
-
-        table td {
-            padding: 14px 12px;
-        }
-
-        table td:first-child {
-            font-weight: 700;
-            width: 120px;
-            color: var(--accent-strong);
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        table td:last-child {
-            color: var(--text-sub);
-        }
-
-        /* Links Section */
-        .links {
-            display: flex;
-            gap: 24px;
-            margin-top: 40px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .link-card {
-            flex: 1;
-            min-width: 280px;
-            max-width: 400px;
-            padding: 30px;
-            background: linear-gradient(135deg, var(--accent-soft) 0%, var(--accent-strong) 100%);
-            border-radius: 12px;
-            text-decoration: none;
-            color: white;
-            transition: transform 0.3s, box-shadow 0.3s;
-            box-shadow: 0 12px 32px var(--shadow-soft);
-        }
-
-        .link-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 16px 36px rgba(37, 99, 235, 0.24);
-        }
-
-        .link-card h3 {
-            margin: 0 0 12px 0;
-            color: white;
-            font-weight: 700;
-            font-size: 1.3rem;
-        }
-
-        .link-card p {
-            margin: 0;
-            font-size: 0.95rem;
-            color: rgba(255, 255, 255, 0.9);
-            line-height: 1.6;
-        }
-
-        /* Details/Summary */
-        details {
-            margin-top: 40px;
-            padding: 30px;
-            background: linear-gradient(to right, var(--muted-surface) 0%, #ffffff 100%);
-            border-radius: 12px;
-            border: 1px solid var(--border);
-        }
-
-        summary {
-            font-size: 1.4rem;
-            font-weight: 700;
-            cursor: pointer;
-            margin-bottom: 25px;
+            margin-bottom: 1.5rem;
             color: var(--text-main);
-            transition: color 0.2s;
         }
 
-        summary:hover {
-            color: var(--accent-strong);
+        .career-details ul {
+            list-style: none;
+            margin-bottom: 1.5rem;
         }
 
-        hr {
-            border: none;
+        .career-details li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-muted);
+        }
+
+        .career-details li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            padding-top: 1rem;
             border-top: 1px solid var(--border);
-            margin: 60px 0;
         }
 
+        .tech-tag {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            background: #f8fafc;
+            border: 1px solid var(--border);
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+        }
+
+        /* Past Career Accordion */
+        details.past-career {
+            margin-top: 3rem;
+        }
+
+        details.past-career summary {
+            font-weight: 600;
+            color: var(--text-muted);
+            cursor: pointer;
+            padding: 1rem;
+            border-radius: var(--radius-md);
+            transition: background 0.2s;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        details.past-career summary::-webkit-details-marker {
+            display: none;
+        }
+
+        details.past-career summary::before {
+            content: '+';
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 1.5rem;
+            height: 1.5rem;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            font-size: 1rem;
+            transition: transform 0.2s;
+        }
+
+        details.past-career[open] summary::before {
+            transform: rotate(45deg);
+            background: var(--text-muted);
+        }
+
+        details.past-career summary:hover {
+            background: #f1f5f9;
+            color: var(--text-main);
+        }
+
+        /* Products Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-light);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .card-badge {
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.25rem 0.75rem;
+            background: #ecfdf5;
+            color: #059669;
+            border-radius: 999px;
+        }
+
+        .card-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            flex: 1;
+        }
+
+        /* Links */
+        .link-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .link-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            background: var(--bg-card);
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .link-item:hover {
+            background: var(--primary);
+            border-color: var(--primary);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .link-item:hover h3, 
+        .link-item:hover p {
+            color: white;
+        }
+
+        .link-item h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-main);
+        }
+
+        .link-item p {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 4rem 0;
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
 
         /* Responsive */
         @media (max-width: 768px) {
-            body {
-                padding: 20px 10px;
+            h1 { font-size: 2.5rem; }
+            
+            .profile-card {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                padding: 2rem;
             }
 
-            .container {
-                padding: 30px 20px;
-            }
-
-            h1 {
-                font-size: 2.5rem;
-                margin-bottom: 40px;
-                letter-spacing: 1px;
-            }
-
-            h2 {
-                font-size: 1.3rem;
-                margin-top: 40px;
-                letter-spacing: 2px;
-            }
-
-            .profile {
-                flex-direction: column;
-                gap: 24px;
-            }
-
-            .profile-image img {
+            .profile-img-wrapper {
                 width: 150px;
+                margin: 0 auto;
+            }
+
+            .profile-content {
+                text-align: center;
+            }
+
+            .tags {
+                justify-content: center;
+            }
+
+            .timeline {
+                padding-left: 1rem;
+            }
+            
+            .timeline-dot {
+                left: -1.45rem;
             }
 
             .career-header {
                 flex-direction: column;
-                align-items: flex-start;
+                gap: 0.25rem;
             }
-
-            .career-item {
-                padding: 20px;
-            }
-
-            .links {
-                flex-direction: column;
-            }
-
-            table td:first-child {
-                width: 90px;
-                font-size: 0.8rem;
-            }
-        }
-
-        @media print {
-            body {
-                background: white;
-                padding: 0;
-            }
-
-            .container {
-                box-shadow: none;
-                padding: 20px;
-            }
-
-            h1 {
-                color: var(--accent-strong);
-                -webkit-text-fill-color: var(--accent-strong);
-            }
-
-            .link-card {
-                background: #f7fafc;
-                color: var(--text-main);
-            }
-
-            .link-card:hover {
-                transform: none;
-                box-shadow: none;
-            }
-        }
-
-        /* Favorite Products */
-        .products {
-            display: grid;
-            gap: 24px;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            margin-top: 20px;
-        }
-
-        .product-card {
-            display: block;
-            padding: 24px;
-            background: linear-gradient(135deg, rgba(14, 165, 233, 0.06), rgba(37, 99, 235, 0.06));
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            text-decoration: none;
-            color: var(--text-main);
-            box-shadow: 0 10px 26px rgba(15, 23, 42, 0.08);
-            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-        }
-
-        .product-card:hover {
-            transform: translateY(-4px);
-            border-color: var(--accent-strong);
-            box-shadow: 0 14px 32px rgba(37, 99, 235, 0.18);
-        }
-
-        .product-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 12px;
-        }
-
-        .product-name {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--accent-strong);
-        }
-
-        .product-tag {
-            font-size: 0.85rem;
-            padding: 6px 10px;
-            background: var(--chip-bg);
-            color: var(--accent-strong);
-            border-radius: 999px;
-            font-weight: 600;
-        }
-
-        .product-card p {
-            margin: 0;
-            color: var(--text-sub);
-            line-height: 1.7;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Profile & Works</h1>
 
+<div class="container">
+    <header>
+        <h1>Profile & Works</h1>
+        <div class="subtitle">Ito Tatsuaki - Backend Engineer & Scrum Master</div>
+    </header>
+
+    <section>
         <h2>Profile</h2>
-        <div class="profile">
-            <div class="profile-image">
+        <div class="profile-card">
+            <div class="profile-img-wrapper">
                 <img src="assets/IMG_2886.jpeg" alt="Ito Tatsuaki">
             </div>
-            <div class="profile-text">
+            <div class="profile-content">
                 <h3>Ito Tatsuaki</h3>
-                <p>大学卒業後、訪日外国人向けNPO法人を立ち上げる。<br>
-                コンテンツマーケティングと職人と旅行者を繋ぐツアーの両軸を担当。</p>
-                <p>その後法人向け不動産仲介会社のPM兼バックエンドエンジニアとして所属。</p>
-                <p>その後フリーランスとしてバックエンドエンジニア, CS開発チームリーダーなどを経る。</p>
-                <p>現在は株式会社グロービスにジョイン。<br>
-                Eラーニングサービスの法人担当者向け機能開発チームに所属。<br>
-                メインの役割はバックエンドエンジニア兼スクラムマスター。<br>
-                PM, エンジニア, デザイナーのメンバーと共に要件定義・設計・実装・テストなどPJを推進するために必要な業務横断的に担当。</p>
-
-                <div class="section-label">職種</div>
-                <p>エンジニア: Ruby on Rails, React(TypeScript), GraphQL<br>
-                スクラムマスター (MAX11名のチーム運営 / スクラムチーム間の横連携 / 事業により一層近いところでの検証)</p>
-
-                <div class="section-label">領域</div>
-                <p>社会貢献性の高いサービス・プロダクトが好きです<br>
-                特にEdTech / MedTech / LegalTech etc</p>
-
-                <div class="section-label">最近の関心</div>
-                <ul style="margin-top: 10px;">
-                    <li>AIの実務活用と人の認知・変化への対応負荷の限界</li>
-                    <li>分析基盤と仮説検証サイクルの高速化</li>
-                </ul>
-
-                <div class="section-label">ひととなり</div>
-                <ul style="margin-top: 10px;">
-                    <li>犬2頭と暮らしています</li>
-                    <li>海外旅行</li>
-                    <li>週5-6の筋トレ</li>
-                    <li>Duolingo 500日以上のストリーク (英語と韓国語)</li>
-                </ul>
-
-                <p class="notice">
-                    <strong>※</strong> 家庭事情で熊本在住のため、フルリモート以外のお話は一旦お断りさせていただいております。
-                </p>
-            </div>
-        </div>
-
-        <hr>
-
-        <h2>Career</h2>
-
-        <div class="career-item">
-            <div class="career-header">
-                <div class="company-name"><a href="https://globis.co.jp/" target="_blank">株式会社グロービス</a></div>
-                <div class="period">2022/05 - 現在</div>
-            </div>
-            <div class="position">バックエンドエンジニア / スクラムマスター / サブリーダー</div>
-
-            <div class="section-label">担当業務</div>
-            <ul>
-                <li>正社員として参画</li>
-                <li><a href="https://globis.co.jp/services/elearning/" target="_blank">グロービス学び放題</a>の法人管理画面・受講画面の開発
-                    <ul>
-                        <li>バックエンド・フロントエンド開発(Ruby on Rails, AWS, React)</li>
-                    </ul>
-                </li>
-                <li>スクラムマスター</li>
-                <li>法人向け開発チームのサブリーダー, バックエンド開発のリード</li>
-                <li>要件定義・テストなど開発に必要な調整</li>
-                <li>フロー効率を上げるための施策として認識の齟齬を避けるための施策実施</li>
-            </ul>
-
-            <div class="section-label">使用技術</div>
-            <table>
-                <tr>
-                    <td>言語</td>
-                    <td>Ruby, TypeScript</td>
-                </tr>
-                <tr>
-                    <td>FW</td>
-                    <td>Ruby on Rails 6系以降, React</td>
-                </tr>
-                <tr>
-                    <td>インフラ</td>
-                    <td>AWS</td>
-                </tr>
-                <tr>
-                    <td>DB</td>
-                    <td>MySQL</td>
-                </tr>
-                <tr>
-                    <td>その他</td>
-                    <td>Datadog, Sentry, GitHub, Sendgrid, Hubspot</td>
-                </tr>
-            </table>
-        </div>
-
-        <h3 style="text-align: center; color: var(--accent-strong); font-weight: 700; margin-top: 50px; margin-bottom: 30px;">副業 / Side Projects</h3>
-
-        <div class="career-item">
-            <div class="career-header">
-                <div class="company-name"><a href="https://wed.company/" target="_blank">株式会社WED</a></div>
-                <div class="period">2025/05 - 現在</div>
-            </div>
-            <div class="position">エンジニア採用/業務改善</div>
-
-            <div class="section-label">担当業務</div>
-            <ul>
-                <li>主にエンジニア採用のスカウトソーシング / AIを活用したスカウト自動化</li>
-                <li>人事業務改善を担当</li>
-            </ul>
-        </div>
-
-        <div class="career-item">
-            <div class="career-header">
-                <div class="company-name"><a href="https://ampfy.co.jp/" target="_blank">株式会社ampfy</a></div>
-                <div class="period">2024/03 - 2024/05</div>
-            </div>
-            <div class="position">プロダクト開発部</div>
-
-            <div class="section-label">担当業務</div>
-            <ul>
-                <li>オンライン投薬サービスの開発
-                    <ul>
-                        <li>React/TypeScriptでのフロントエンド開発</li>
-                        <li>Ruby on Railsでのバックエンド開発</li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-
-        <div class="career-item">
-            <div class="career-header">
-                <div class="company-name"><a href="https://wed.company/" target="_blank">株式会社WED</a></div>
-                <div class="period">2023/06 - 2023/11</div>
-            </div>
-            <div class="position">エンジニア採用/業務改善</div>
-
-            <div class="section-label">担当業務</div>
-            <ul>
-                <li>主にエンジニア採用のスカウトソーシング</li>
-                <li>人事業務改善を担当</li>
-            </ul>
-        </div>
-
-        <hr>
-
-        <details open>
-            <summary>現職より前の経歴</summary>
-
-            <div class="career-item">
-                <h3>フリーランスエンジニア</h3>
-                <div class="period">2020/01 ~ 2022/02</div>
-                <p style="margin: 10px 0; color: var(--text-sub); font-size: 0.9rem;">※ 契約上案件名のみのものも含まれます</p>
-
-                <div class="section-label">担当業務</div>
-                <ul>
-                    <li>不動産業者向け問い合わせ対応SaaSの開発, CS開発チームリーダー(Golang, Nuxt.js)</li>
-                    <li><a href="https://kidsline.me/" target="_blank">ベビーシッターマッチングC2Cプラットフォーム</a>のサーバーサイド開発(Ruby on Rails)</li>
-                    <li><a href="https://www.hitomawari.jp/" target="_blank">労務・人事向けHR SaaS</a>のAPI開発(Ruby on Rails)</li>
-                </ul>
-
-                <div class="section-label">使用技術</div>
-                <table>
-                    <tr>
-                        <td>言語</td>
-                        <td>Ruby, Golang</td>
-                    </tr>
-                    <tr>
-                        <td>FW</td>
-                        <td>Ruby on Rails 6系以降</td>
-                    </tr>
-                    <tr>
-                        <td>インフラ</td>
-                        <td>AWS</td>
-                    </tr>
-                    <tr>
-                        <td>DB</td>
-                        <td>MySQL, PostgresQL</td>
-                    </tr>
-                    <tr>
-                        <td>その他</td>
-                        <td>GitHub, Figma</td>
-                    </tr>
-                </table>
-            </div>
-
-            <div class="career-item">
-                <h3>株式会社オフィスバンク</h3>
-                <div class="period">2018/05 ~ 2020/01</div>
-                <div class="position">情報メディアデザイン部</div>
-
-                <div class="section-label">担当業務</div>
-                <ul>
-                    <li>外注していた社内向け物件管理システムの内製化</li>
-                    <li>社内初エンジニア組織の創設</li>
-                    <li>プロダクトマネジメント</li>
-                    <li>バックエンド開発</li>
-                </ul>
-
-                <div class="section-label">使用技術</div>
-                <table>
-                    <tr>
-                        <td>言語</td>
-                        <td>Ruby</td>
-                    </tr>
-                    <tr>
-                        <td>FW</td>
-                        <td>Ruby on Rails 6系以降</td>
-                    </tr>
-                    <tr>
-                        <td>インフラ</td>
-                        <td>AWS</td>
-                    </tr>
-                    <tr>
-                        <td>DB</td>
-                        <td>MySQL</td>
-                    </tr>
-                    <tr>
-                        <td>その他</td>
-                        <td>GitHub, Figma</td>
-                    </tr>
-                </table>
-            </div>
-
-            <div class="career-item">
-                <h3>NPO法人SAMURAI MEETUPS</h3>
-                <div class="period">2014/04 - 2018/04</div>
-                <div class="position">Marketingチーム</div>
-
-                <div class="section-label">担当業務</div>
-                <ul>
-                    <li>海外向けに日本の伝統文化を発信するWebメディアの作成・運営(WordPress)</li>
-                    <li>Web広告のディレクション(Google広告)</li>
-                    <li>記事のディレクション(英語・フランス語のみ)</li>
-                    <li>訪日旅行者と日本の職人を繋ぐツアーの運営</li>
-                </ul>
-            </div>
-
-            <div class="career-item">
-                <h3>中央大学 法学部 法律学科卒業</h3>
-                <div class="period">2014/03</div>
-            </div>
-        </details>
-
-        <h2>Favorite Products</h2>
-        <div class="products">
-            <a href="https://www.raycast.com/" target="_blank" class="product-card">
-                <div class="product-header">
-                    <div class="product-name">Raycast</div>
-                    <span class="product-tag">Launcher</span>
+                <div class="profile-bio">
+                    <p>大学卒業後、訪日外国人向けNPO法人を立ち上げ、その後エンジニアへ転身。法人向け不動産仲介会社のPM兼バックエンドエンジニア、フリーランスを経て、現在は株式会社グロービスにてEラーニングサービスの開発に従事。</p>
+                    <p>バックエンドエンジニア兼スクラムマスターとして、要件定義から実装・テストまで横断的に担当し、チームの成果最大化に貢献しています。</p>
                 </div>
-                <p>キーボード操作だけでアプリ起動・検索・スニペット呼び出しが完結するのが好きで、タスクやメモの切り替えが視線移動なくサッと終わる点に助けられています。</p>
-            </a>
-        </div>
 
-        <h2>Links</h2>
-        <div class="links">
-            <a href="https://note.com/gratachu" target="_blank" class="link-card">
-                <h3>note</h3>
-                <p>趣味の開発/記事を読んで得たこと/資格取得etc</p>
-            </a>
-            <a href="https://github.com/gratachu" target="_blank" class="link-card">
-                <h3>GitHub</h3>
-                <p>gratachu - 16 repositories</p>
+                <div class="tags-group">
+                    <span class="tags-label">Roles</span>
+                    <div class="tags">
+                        <span class="tag">Backend Engineer</span>
+                        <span class="tag">Scrum Master</span>
+                        <span class="tag">Tech Lead</span>
+                    </div>
+                </div>
+
+                <div class="tags-group">
+                    <span class="tags-label">Tech Stack</span>
+                    <div class="tags">
+                        <span class="tag">Ruby on Rails</span>
+                        <span class="tag">React (TS)</span>
+                        <span class="tag">GraphQL</span>
+                        <span class="tag">AWS</span>
+                    </div>
+                </div>
+
+                <div class="tags-group">
+                    <span class="tags-label">Interests</span>
+                    <div class="tags">
+                        <span class="tag">EdTech</span>
+                        <span class="tag">MedTech</span>
+                        <span class="tag">AI Integration</span>
+                        <span class="tag">Data Analysis</span>
+                    </div>
+                </div>
+
+                <div class="notice">
+                    <span>⚠️</span>
+                    <div>家庭事情（熊本在住）のため、フルリモート案件のみ受け付けております。</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Career</h2>
+        <div class="timeline">
+            <!-- Current Job -->
+            <div class="career-card">
+                <div class="timeline-dot"></div>
+                <div class="career-header">
+                    <a href="https://globis.co.jp/" target="_blank" class="company">株式会社グロービス</a>
+                    <span class="period">2022/05 - Present</span>
+                </div>
+                <div class="role">バックエンドエンジニア / スクラムマスター / サブリーダー</div>
+                <div class="career-details">
+                    <ul>
+                        <li>「グロービス学び放題」の法人管理画面・受講画面の開発（Rails, React, AWS）</li>
+                        <li>法人向け開発チームのサブリーダーおよびバックエンドリード</li>
+                        <li>スクラムマスターとしてチームのプロセス改善とフロー効率化を推進</li>
+                    </ul>
+                </div>
+                <div class="tech-stack">
+                    <span class="tech-tag">Ruby</span>
+                    <span class="tech-tag">TypeScript</span>
+                    <span class="tech-tag">Rails</span>
+                    <span class="tech-tag">React</span>
+                    <span class="tech-tag">AWS</span>
+                    <span class="tech-tag">MySQL</span>
+                    <span class="tech-tag">Datadog</span>
+                </div>
+            </div>
+
+            <!-- Side Project 1 -->
+            <div class="career-card">
+                <div class="timeline-dot"></div>
+                <div class="career-header">
+                    <a href="https://wed.company/" target="_blank" class="company">株式会社WED (副業)</a>
+                    <span class="period">2025/05 - Present</span>
+                </div>
+                <div class="role">エンジニア採用 / 業務改善</div>
+                <div class="career-details">
+                    <ul>
+                        <li>エンジニア採用のスカウトソーシングおよびAIを活用した自動化</li>
+                        <li>人事業務のオペレーション改善</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Side Project 2 -->
+            <div class="career-card">
+                <div class="timeline-dot"></div>
+                <div class="career-header">
+                    <a href="https://ampfy.co.jp/" target="_blank" class="company">株式会社ampfy (副業)</a>
+                    <span class="period">2024/03 - 2024/05</span>
+                </div>
+                <div class="role">プロダクト開発</div>
+                <div class="career-details">
+                    <ul>
+                        <li>オンライン投薬サービスの開発</li>
+                        <li>React/TypeScriptでのフロントエンド、Railsでのバックエンド開発</li>
+                    </ul>
+                </div>
+            </div>
+
+             <!-- Side Project 3 -->
+             <div class="career-card">
+                <div class="timeline-dot"></div>
+                <div class="career-header">
+                    <a href="https://wed.company/" target="_blank" class="company">株式会社WED (副業)</a>
+                    <span class="period">2023/06 - 2023/11</span>
+                </div>
+                <div class="role">エンジニア採用 / 業務改善</div>
+                <div class="career-details">
+                    <ul>
+                        <li>エンジニア採用のスカウトソーシング</li>
+                        <li>人事業務改善</li>
+                    </ul>
+                </div>
+            </div>
+
+            <details class="past-career">
+                <summary>Previous Experience</summary>
+                <div style="margin-top: 2rem;">
+                    <!-- Freelance -->
+                    <div class="career-card">
+                        <div class="timeline-dot"></div>
+                        <div class="career-header">
+                            <span class="company">フリーランスエンジニア</span>
+                            <span class="period">2020/01 - 2022/02</span>
+                        </div>
+                        <div class="career-details">
+                            <ul>
+                                <li>不動産業者向けSaaS開発、CS開発チームリーダー (Golang, Nuxt.js)</li>
+                                <li>ベビーシッターマッチングPFのサーバーサイド開発 (Rails)</li>
+                                <li>HR SaaSのAPI開発 (Rails)</li>
+                            </ul>
+                        </div>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Ruby</span>
+                            <span class="tech-tag">Golang</span>
+                            <span class="tech-tag">Rails</span>
+                            <span class="tech-tag">AWS</span>
+                        </div>
+                    </div>
+
+                    <!-- Office Bank -->
+                    <div class="career-card">
+                        <div class="timeline-dot"></div>
+                        <div class="career-header">
+                            <span class="company">株式会社オフィスバンク</span>
+                            <span class="period">2018/05 - 2020/01</span>
+                        </div>
+                        <div class="role">情報メディアデザイン部</div>
+                        <div class="career-details">
+                            <ul>
+                                <li>社内向け物件管理システムの内製化・バックエンド開発</li>
+                                <li>社内初エンジニア組織の立ち上げ</li>
+                            </ul>
+                        </div>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Ruby</span>
+                            <span class="tech-tag">Rails</span>
+                            <span class="tech-tag">AWS</span>
+                        </div>
+                    </div>
+
+                    <!-- NPO -->
+                    <div class="career-card">
+                        <div class="timeline-dot"></div>
+                        <div class="career-header">
+                            <span class="company">NPO法人SAMURAI MEETUPS</span>
+                            <span class="period">2014/04 - 2018/04</span>
+                        </div>
+                        <div class="role">Marketing Team</div>
+                        <div class="career-details">
+                            <ul>
+                                <li>Webメディア運営・Web広告ディレクション</li>
+                                <li>訪日旅行者向けツアー企画・運営</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </details>
+        </div>
+    </section>
+
+    <section>
+        <h2>Favorite Products</h2>
+        <div class="grid">
+            <a href="https://www.raycast.com/" target="_blank" class="card">
+                <div class="card-header">
+                    <span class="card-title">Raycast</span>
+                    <span class="card-badge">Launcher</span>
+                </div>
+                <p class="card-desc">キーボード操作だけでアプリ起動・検索・スニペット呼び出しが完結。タスクやメモの切り替えが視線移動なくサッと終わる点に助けられています。</p>
             </a>
         </div>
-    </div>
+    </section>
+
+    <section>
+        <h2>Links</h2>
+        <div class="link-grid">
+            <a href="https://note.com/gratachu" target="_blank" class="link-item">
+                <h3>note</h3>
+                <p>Tech Blog & Thoughts</p>
+            </a>
+            <a href="https://github.com/gratachu" target="_blank" class="link-item">
+                <h3>GitHub</h3>
+                <p>@gratachu</p>
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Ito Tatsuaki. All rights reserved.</p>
+    </footer>
+</div>
+
 </body>
 </html>
