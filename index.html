@@ -104,6 +104,7 @@
             font-weight: 800;
             letter-spacing: -0.02em;
             background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 50%, var(--secondary) 100%);
+            background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             margin-bottom: 1rem;
@@ -517,6 +518,63 @@
                 gap: 0.25rem;
             }
         }
+
+        /* STAR+S Layout */
+        .star-s-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px dashed var(--border);
+        }
+
+        .star-s-item {
+            display: grid;
+            grid-template-columns: 160px 1fr;
+            gap: 1.5rem;
+            align-items: baseline;
+        }
+
+        .star-s-label {
+            font-weight: 800;
+            color: var(--primary);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            position: relative;
+        }
+
+        .star-s-label::after {
+            content: '';
+            display: block;
+            width: 20px;
+            height: 2px;
+            background: var(--border);
+            margin-top: 0.5rem;
+        }
+
+        .star-s-content {
+            color: var(--text-main);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .star-s-content ul {
+            margin-bottom: 0;
+            margin-top: 0.5rem;
+        }
+
+        @media (max-width: 640px) {
+            .star-s-item {
+                grid-template-columns: 1fr;
+                gap: 0.5rem;
+            }
+
+            .star-s-label::after {
+                display: none;
+            }
+        }
     </style>
 </head>
 
@@ -590,12 +648,72 @@
                         <span class="period">2022/05 - Present</span>
                     </div>
                     <div class="role">バックエンドエンジニア / スクラムマスター / サブリーダー</div>
-                    <div class="career-details">
-                        <ul>
-                            <li>「グロービス学び放題」の法人管理画面・受講画面の開発（Rails, React, AWS）</li>
-                            <li>法人向け開発チームのサブリーダーおよびバックエンドリード</li>
-                            <li>スクラムマスターとしてチームのプロセス改善とフロー効率化を推進</li>
-                        </ul>
+
+                    <div class="star-s-container">
+                        <div class="star-s-item">
+                            <div class="star-s-label">Situation<br><span
+                                    style="font-size: 0.7em; color: var(--text-muted); font-weight: normal; text-transform: none;">どんな環境で</span>
+                            </div>
+                            <div class="star-s-content">
+                                <!-- ここに環境や背景を記述してください -->
+                                株式会社グロービスにて、Eラーニングサービス「グロービス学び放題」の開発・運用を行う法人向け開発チームに所属。
+                            </div>
+                        </div>
+
+                        <div class="star-s-item">
+                            <div class="star-s-label">Task<br><span
+                                    style="font-size: 0.7em; color: var(--text-muted); font-weight: normal; text-transform: none;">どんな任務を持ち</span>
+                            </div>
+                            <div class="star-s-content">
+                                法人向け開発チームのサブリーダーおよびスクラムマスター・バックエンドリードとして、プロダクト価値の最大化とチームの生産性向上をミッションとして担当。
+                                スクラムマスター: チームの健康状態維持、プロジェクトの推進、スプリントイベントのファシリテーション、チームのプロセス改善
+                                バックエンドリード: バックエンド開発の推進、技術的負債の解消
+                                サブリーダー: チームとしての意思決定の共有、チームの成長促進
+                            </div>
+                        </div>
+
+                        <div class="star-s-item">
+                            <div class="star-s-label">Action<br><span
+                                    style="font-size: 0.7em; color: var(--text-muted); font-weight: normal; text-transform: none;">自分は何を実行して</span>
+                            </div>
+                            <div class="star-s-content">
+                                <div style="margin-bottom: 0.5rem;"><strong>Backend Lead</strong></div>
+                                <ul>
+                                    <li>「グロービス学び放題」の法人管理画面・受講画面における複雑な機能要件の設計・実装をリード（Rails, React, AWS）</li>
+                                    <li>設計や開発思想をシンプルに保つことで、技術的負債を生まない・生んだとしても解消を込みで動ける文化の醸成</li>
+                                </ul>
+
+                                <div style="margin-bottom: 0.5rem; margin-top: 1rem;"><strong>Scrum Master</strong>
+                                </div>
+                                <ul>
+                                    <li>スクラムイベント（Planning, Daily Scrum, Review, Retrospective）のファシリテーションやチームの状態をみて都度イベントや仕掛けの作成
+                                    </li>
+                                    <li>FourKeys（ベロシティ、サイクルタイム等）の計測・分析を行い、データに基づいたプロセス改善を推進</li>
+                                    <li>心理的安全性の高いチーム環境を醸成し、メンバーからの積極的な提案や改善活動を促進</li>
+                                </ul>
+
+                                <div style="margin-bottom: 0.5rem; margin-top: 1rem;"><strong>Sub-leader</strong></div>
+                                <ul>
+                                    <li>事業チームとのMTGにも入り、仕様調整や技術的な実現可能性の検証を素早く実施しFBを回すことで "なぜやるか？"に集中できる環境作り</li>
+                                    <li>メンバーとの1on1, メンタリングを実施しチームとしての違和感の種を違和感の種のうちに解決に動けるようにした</li>
+                                    <li>チーム内の誰もが意思決定をできる成功体験を積み、意思決定ハードルを極限まで下げた</li>
+                                    <li>誰もが回せるスクラム を推進し、スクラム運営のハードルを下げ全員が "自分のチーム"と認識して動けるチーム作り</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="star-s-item">
+                            <div class="star-s-label">Result<br><span
+                                    style="font-size: 0.7em; color: var(--text-muted); font-weight: normal; text-transform: none;">結果どうだったのか</span>
+                            </div>
+                            <div class="star-s-content">
+                                <ul>
+                                    <li>開発リードタイムを1/4まで減らすことによる開発生産性の向上</li>
+                                    <li>要件定義からQAフェーズまですべてのプロセスを各ロールと対話・改善し全体的なリリースサイクルの向上 (平均リリースサイクルを2週間程度まで短縮) </li>
+                                    <li>どのなににAIを使うと効果的か？を各ロールのプロセスを理解し、トライする導入と即効性のある仕組みで分けつつ変化に適応する組織の醸成</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                     <div class="tech-stack">
                         <span class="tech-tag">Ruby</span>
