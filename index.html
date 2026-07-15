@@ -331,6 +331,49 @@
             border-radius: 4px;
         }
 
+        /* Project entries inside career card */
+        .pj-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.75rem;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px dashed var(--border);
+        }
+
+        .pj-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .pj-title {
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .pj-period {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-feature-settings: "tnum";
+            background: #f1f5f9;
+            padding: 0.1rem 0.6rem;
+            border-radius: 999px;
+        }
+
+        .pj-meta {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+        }
+
+        .pj-item .career-details ul {
+            margin-bottom: 0;
+        }
+
         /* Past Career Accordion */
         details.past-career {
             margin-top: 3rem;
@@ -519,62 +562,6 @@
             }
         }
 
-        /* STAR+S Layout */
-        .star-s-container {
-            display: flex;
-            flex-direction: column;
-            gap: 1.25rem;
-            margin-top: 1.5rem;
-            padding-top: 1.5rem;
-            border-top: 1px dashed var(--border);
-        }
-
-        .star-s-item {
-            display: grid;
-            grid-template-columns: 160px 1fr;
-            gap: 1.5rem;
-            align-items: baseline;
-        }
-
-        .star-s-label {
-            font-weight: 800;
-            color: var(--primary);
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            position: relative;
-        }
-
-        .star-s-label::after {
-            content: '';
-            display: block;
-            width: 20px;
-            height: 2px;
-            background: var(--border);
-            margin-top: 0.5rem;
-        }
-
-        .star-s-content {
-            color: var(--text-main);
-            font-size: 0.95rem;
-            line-height: 1.7;
-        }
-
-        .star-s-content ul {
-            margin-bottom: 0;
-            margin-top: 0.5rem;
-        }
-
-        @media (max-width: 640px) {
-            .star-s-item {
-                grid-template-columns: 1fr;
-                gap: 0.5rem;
-            }
-
-            .star-s-label::after {
-                display: none;
-            }
-        }
     </style>
 </head>
 
@@ -583,7 +570,7 @@
     <div class="container">
         <header>
             <h1>Profile & Works</h1>
-            <div class="subtitle">Ito Tatsuaki - Backend Engineer & Scrum Master</div>
+            <div class="subtitle">Ito Tatsuaki - Lead Engineer & Scrum Master</div>
         </header>
 
         <section>
@@ -595,27 +582,38 @@
                 <div class="profile-content">
                     <h3>Ito Tatsuaki</h3>
                     <div class="profile-bio">
-                        <p>大学卒業後、訪日外国人向けNPO法人を立ち上げ、その後エンジニアへ転身。法人向け不動産仲介会社のPM兼バックエンドエンジニア、フリーランスを経て、現在は株式会社グロービスにてEラーニングサービスの開発に従事。
+                        <p>Webアプリケーション開発を軸に、バックエンド設計・実装のリード、技術的意思決定、開発チームの立ち上げを経験。大学卒業後に訪日外国人向けNPO法人を設立し事業運営を経験した後エンジニアへ転身。法人向け不動産仲介会社でのエンジニアチーム立ち上げ、フリーランスを経て、現在は株式会社グロービスにてBtoB
+                            SaaS（法人向け動画学習サービス）の開発に従事。
                         </p>
-                        <p>バックエンドエンジニア兼スクラムマスターとして、要件定義から実装・テストまで横断的に担当し、チームの成果最大化に貢献しています。</p>
+                        <p>直近4年間はリードエンジニアとしてデータモデル設計・アーキテクチャ選定・実装を主導しながらスクラムマスターを兼務。約3億行の学習記録テーブルを扱う集計基盤の設計や、高頻度デプロイ環境（1日10〜30回）と両立するリアルタイム同期基盤のマルチクラウド判断など、ビジネスリスクを踏まえた技術的意思決定を担当。生成AIの実務活用も自ら推進し、Claude
+                            Codeを活用した高速プロトタイピング文化を社内で立ち上げ、半年で85機能のプロトタイプ開発を主導。スクラムマスターとしては開発リードタイムを60時間から37時間へ短縮（社内最速）。</p>
                     </div>
 
                     <div class="tags-group">
                         <span class="tags-label">Roles</span>
                         <div class="tags">
-                            <span class="tag">Backend Engineer</span>
+                            <span class="tag">Lead Engineer</span>
                             <span class="tag">Scrum Master</span>
-                            <span class="tag">Tech Lead</span>
+                            <span class="tag">PL</span>
                         </div>
                     </div>
 
                     <div class="tags-group">
                         <span class="tags-label">Tech Stack</span>
                         <div class="tags">
-                            <span class="tag">Ruby on Rails</span>
-                            <span class="tag">React (TS)</span>
-                            <span class="tag">GraphQL</span>
+                            <span class="tag">Ruby (6年)</span>
+                            <span class="tag">TypeScript (2年)</span>
+                            <span class="tag">React (2年)</span>
+                            <span class="tag">Golang (1年)</span>
                             <span class="tag">AWS</span>
+                        </div>
+                    </div>
+
+                    <div class="tags-group">
+                        <span class="tags-label">Management</span>
+                        <div class="tags">
+                            <span class="tag">10〜12人チームのマネジメント</span>
+                            <span class="tag">PO・デザイナー・CS等 非エンジニアを含むチーム運営</span>
                         </div>
                     </div>
 
@@ -647,81 +645,145 @@
                         <a href="https://globis.co.jp/" target="_blank" class="company">株式会社グロービス</a>
                         <span class="period">2022/05 - Present</span>
                     </div>
-                    <div class="role">バックエンドエンジニア / スクラムマスター / サブリーダー</div>
+                    <div class="role">PL / リードエンジニア / スクラムマスター</div>
 
-                    <div class="star-s-container">
-                        <div class="star-s-item">
-                            <div class="star-s-label">Situation<br><span
-                                    style="font-size: 0.7em; color: var(--text-muted); font-weight: normal; text-transform: none;">どんな環境で</span>
-                            </div>
-                            <div class="star-s-content">
-                                <!-- ここに環境や背景を記述してください -->
-                                株式会社グロービスにて、Eラーニングサービス「グロービス学び放題」の開発・運用を行う法人向け開発チームに所属。
-                            </div>
-                        </div>
+                    <div class="career-details">
+                        <ul>
+                            <li>BtoB SaaS「グロービス学び放題」（法人向け動画学習サービス）の機能開発にて、リードエンジニアとしてデータモデル設計・アーキテクチャ選定・実装を主導し、スクラムマスターを兼務</li>
+                            <li>スクラムマスターとして開発リードタイムを60時間から37時間へ短縮（社内最速）。QA・デザイナーとの連携プロセス改善により品質とスピードを両立</li>
+                            <li>請求領域など高リスク箇所のレビューによる品質担保など、ビジネスリスクを踏まえた技術的意思決定を担当</li>
+                        </ul>
+                    </div>
 
-                        <div class="star-s-item">
-                            <div class="star-s-label">Task<br><span
-                                    style="font-size: 0.7em; color: var(--text-muted); font-weight: normal; text-transform: none;">どんな任務を持ち</span>
+                    <div class="pj-list">
+                        <div class="pj-item">
+                            <div class="pj-header">
+                                <span class="pj-title">サーベイ機能</span>
+                                <span class="pj-period">2026/01 - 2026/06</span>
                             </div>
-                            <div class="star-s-content">
-                                法人向け開発チームのサブリーダーおよびスクラムマスター・バックエンドリードとして、プロダクト価値の最大化とチームの生産性向上をミッションとして担当。
-                                スクラムマスター: チームの健康状態維持、プロジェクトの推進、スプリントイベントのファシリテーション、チームのプロセス改善
-                                バックエンドリード: バックエンド開発の推進、技術的負債の解消
-                                サブリーダー: チームとしての意思決定の共有、チームの成長促進
-                            </div>
-                        </div>
-
-                        <div class="star-s-item">
-                            <div class="star-s-label">Action<br><span
-                                    style="font-size: 0.7em; color: var(--text-muted); font-weight: normal; text-transform: none;">自分は何を実行して</span>
-                            </div>
-                            <div class="star-s-content">
-                                <div style="margin-bottom: 0.5rem;"><strong>Backend Lead</strong></div>
+                            <div class="pj-meta">PL・リードエンジニア・スクラムマスター ｜ チーム12名・ステークホルダー8名前後</div>
+                            <div class="career-details">
                                 <ul>
-                                    <li>「グロービス学び放題」の法人管理画面・受講画面における複雑な機能要件の設計・実装をリード（Rails, React, AWS）</li>
-                                    <li>設計や開発思想をシンプルに保つことで、技術的負債を生まない・生んだとしても解消を込みで動ける文化の醸成</li>
-                                </ul>
-
-                                <div style="margin-bottom: 0.5rem; margin-top: 1rem;"><strong>Scrum Master</strong>
-                                </div>
-                                <ul>
-                                    <li>スクラムイベント（Planning, Daily Scrum, Review, Retrospective）のファシリテーションやチームの状態をみて都度イベントや仕掛けの作成
-                                    </li>
-                                    <li>FourKeys（ベロシティ、サイクルタイム等）の計測・分析を行い、データに基づいたプロセス改善を推進</li>
-                                    <li>心理的安全性の高いチーム環境を醸成し、メンバーからの積極的な提案や改善活動を促進</li>
-                                </ul>
-
-                                <div style="margin-bottom: 0.5rem; margin-top: 1rem;"><strong>Sub-leader</strong></div>
-                                <ul>
-                                    <li>事業チームとのMTGにも入り、仕様調整や技術的な実現可能性の検証を素早く実施しFBを回すことで "なぜやるか？"に集中できる環境作り</li>
-                                    <li>メンバーとの1on1, メンタリングを実施しチームとしての違和感の種を違和感の種のうちに解決に動けるようにした</li>
-                                    <li>チーム内の誰もが意思決定をできる成功体験を積み、意思決定ハードルを極限まで下げた</li>
-                                    <li>誰もが回せるスクラム を推進し、スクラム運営のハードルを下げ全員が "自分のチーム"と認識して動けるチーム作り</li>
-                                    <li>顧客参加型のイベントにも参加し、プロトタイプの展示やデモンストレーションを行い、顧客とのコミュニケーションを深めていく動き</li>
+                                    <li>グロービス独自のケイパビリティモデルに基づくサーベイ機能を開発。設問・尺度をマスタデータとしてアプリケーションコードから分離し、モデル改訂時にリリース不要で設問差し替えが可能な設計を採用</li>
+                                    <li>スコア計算ロジックと結果表示ロジックをサーベイのカテゴリ単位で別モデルに分離し、種類・表示パターン追加時の影響範囲を局所化</li>
+                                    <li>サーベイ結果のAI分析機能、および設問集のバージョン管理機構を主導</li>
+                                    <li>Slack・Notion・議事録から意思決定事項をLLMで1日2回自動集約し、矛盾を検知してアラートする仕組みを構築。ステークホルダー8名との要件合意を主導</li>
+                                    <li>モデル定義確定から2週間でリリース（社内最短のリードタイム）。リリース後1ヶ月間、顧客影響のある障害ゼロで運用</li>
                                 </ul>
                             </div>
                         </div>
 
-                        <div class="star-s-item">
-                            <div class="star-s-label">Result<br><span
-                                    style="font-size: 0.7em; color: var(--text-muted); font-weight: normal; text-transform: none;">結果どうだったのか</span>
+                        <div class="pj-item">
+                            <div class="pj-header">
+                                <span class="pj-title">法人向け学習目標機能</span>
+                                <span class="pj-period">2025/06 - 2025/12</span>
                             </div>
-                            <div class="star-s-content">
+                            <div class="pj-meta">PL・リードエンジニア・スクラムマスター ｜ チーム12名・ステークホルダー5名前後</div>
+                            <div class="career-details">
                                 <ul>
-                                    <li>開発リードタイムを1/4まで減らすことによる開発生産性の向上</li>
-                                    <li>要件定義からQAフェーズまですべてのプロセスを各ロールと対話・改善し全体的なリリースサイクルの向上 (平均リリースサイクルを2週間程度まで短縮) </li>
-                                    <li>どのなににAIを使うと効果的か？を各ロールのプロセスを理解し、トライする導入と即効性のある仕組みで分けつつ変化に適応する組織の醸成</li>
+                                    <li>約3億行の学習ステップ記録テーブルを扱う進捗集計基盤を設計。都度クエリでは性能要件を満たせないためバッチ集計を採用し、契約更新タイミングでの鮮度リスクを最重要リスクとして特定</li>
+                                    <li>キャッシュを本機能専用とせず、user×日次を粒度とする汎用集計テーブルとして設計し、以降の学習データ活用機能が再利用できる組織の資産に</li>
+                                    <li>毎日の自動検算→Slack通知の仕組みを導入し、キャッシュデータを安心して業務判断に使える状態を担保</li>
+                                    <li>顧客が自身で従業員の目標管理を完結できるようになり、CSとの対話を運用代行から学習の質の議論へシフト。汎用キャッシュテーブルは他チーム・他機能でも再利用</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="pj-item">
+                            <div class="pj-header">
+                                <span class="pj-title">Claude Code活用による高速プロトタイピング文化の構築</span>
+                                <span class="pj-period">2025/06 - 2025/12</span>
+                            </div>
+                            <div class="pj-meta">社内改善PJ（自身が発起） ｜ エンジニア3名</div>
+                            <div class="career-details">
+                                <ul>
+                                    <li>AIエージェント活用の形骸化と受動的な開発文化という組織課題に対し、「粗くても動くものを作って検証する」プロセスを設計し、半年で100機能のプロトタイプ開発を目標に設定</li>
+                                    <li>6ヶ月で85機能のプロトタイプを開発（エンジニア3名、1人あたり月約4.7機能）</li>
+                                    <li>3機能がPJとして採用され、1機能がリリース済み</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="pj-item">
+                            <div class="pj-header">
+                                <span class="pj-title">法人向け上映会機能</span>
+                                <span class="pj-period">2025/03 - 2025/06</span>
+                            </div>
+                            <div class="pj-meta">PL・リードエンジニア・スクラムマスター ｜ チーム13名・ステークホルダー10名前後</div>
+                            <div class="career-details">
+                                <ul>
+                                    <li>1日10〜30回のデプロイが走る既存環境ではライブ同時視聴の常時接続を維持できないため、リアルタイム同期基盤としてGCP Realtime Databaseを採用（マルチクラウド判断）。マネージドによる運用負荷排除・デプロイサイクルからの分離・意思決定の速さを優先</li>
+                                    <li>Realtime Databaseとの接続基盤、および参加者の視聴状態を同期するリアルタイム同期部分の実装を主導。上映会開催後の視聴データ集計まで実装</li>
+                                    <li>導入後、法人受講者の未ログイン率を2割削減。本機能をフックとした成約が営業経由で5件以上発生</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="pj-item">
+                            <div class="pj-header">
+                                <span class="pj-title">社内リファラル機能</span>
+                                <span class="pj-period">2024/09 - 2025/01</span>
+                            </div>
+                            <div class="pj-meta">PL・リードエンジニア・スクラムマスター ｜ チーム8名・ステークホルダー10名前後</div>
+                            <div class="career-details">
+                                <ul>
+                                    <li>契約期間の途中で発生する「学びたい」需要をテックタッチで受け止めるため、「部下の現状を入力すると課題解決に向けた個別コースを提案する」AIマッチングとセットで申込導線を設計</li>
+                                    <li>データサイエンスチームと連携し、コースのメタ情報に加えて字幕データを提案ロジックの入力として活用。AIコース提案部分の設計・実装を主導</li>
+                                    <li>誤請求リスクが最も高い申込実装は自身がレビュアーとして品質を担保し、高リスク領域を扱えるメンバーの育成と属人化解消を同時に推進</li>
+                                    <li>テックタッチによる売上創出を仕組み化し、大手導入先において社内初の未営業でのユーザー獲得を実現</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="pj-item">
+                            <div class="pj-header">
+                                <span class="pj-title">法人向けアセスメント機能開発</span>
+                                <span class="pj-period">2024/04 - 2024/09</span>
+                            </div>
+                            <div class="pj-meta">エンジニア・スクラムマスター</div>
+                            <div class="career-details">
+                                <ul>
+                                    <li>アセスメント受講→動画学習のサイクルを作り、法人が導入効果・学習効果を可視化できる状態を実現</li>
+                                    <li>アセスメント受検後のAIフィードバック機能追加により、受検後の自立学習率が向上。機能フックによる受注率の向上にも貢献</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="pj-item">
+                            <div class="pj-header">
+                                <span class="pj-title">法人向け申込機能刷新PJ</span>
+                                <span class="pj-period">2022/09 - 2024/03</span>
+                            </div>
+                            <div class="pj-meta">エンジニア・スクラムマスター</div>
+                            <div class="career-details">
+                                <ul>
+                                    <li>技術的負債であった法人管理者の申込機能を社内の別プロダクトから移管・刷新</li>
+                                    <li>無停止でのアップデートを実現し、オペレーションフローを大きく効率化</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="pj-item">
+                            <div class="pj-header">
+                                <span class="pj-title">法人向けリニューアルPJ</span>
+                                <span class="pj-period">2022/05 - 2022/09</span>
+                            </div>
+                            <div class="pj-meta">エンジニア</div>
+                            <div class="career-details">
+                                <ul>
+                                    <li>管理画面の刷新を無停止でアップデートし、顧客影響のある重大なバグなく運用</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                     <div class="tech-stack">
                         <span class="tech-tag">Ruby</span>
+                        <span class="tech-tag">Ruby on Rails 6〜8系</span>
                         <span class="tech-tag">TypeScript</span>
-                        <span class="tech-tag">Rails</span>
                         <span class="tech-tag">React</span>
                         <span class="tech-tag">AWS</span>
+                        <span class="tech-tag">GCP (Realtime Database)</span>
+                        <span class="tech-tag">Docker</span>
                         <span class="tech-tag">MySQL</span>
                         <span class="tech-tag">Datadog</span>
                     </div>
@@ -782,21 +844,25 @@
                         <div class="career-card">
                             <div class="timeline-dot"></div>
                             <div class="career-header">
-                                <span class="company">フリーランスエンジニア</span>
-                                <span class="period">2020/01 - 2022/02</span>
+                                <span class="company">フリーランスエンジニア（個人事業主）</span>
+                                <span class="period">2020/01 - 2022/03</span>
                             </div>
                             <div class="career-details">
                                 <ul>
-                                    <li>不動産業者向けSaaS開発、CS開発チームリーダー (Golang, Nuxt.js)</li>
-                                    <li>ベビーシッターマッチングPFのサーバーサイド開発 (Rails)</li>
-                                    <li>HR SaaSのAPI開発 (Rails)</li>
+                                    <li>不動産一時反響システム開発（2021/07 - 2022/03）: CS向け開発チームリーダーとしてエンジニア2名・CS4名をマネジメント。クライアント導入フローを見直し導入ハードルを下げ、新規導入企業30社増加・売上900万円UPに貢献 (Golang, Vue.js/Nuxt.js, AWS)</li>
+                                    <li>転職データ可視化サービスの創業期立ち上げ（2020/08 - 2021/07）: CS向け開発チームリーダーとしてエンジニア2名・デザイナー1名・CS1名をマネジメントし、サービスリリースによる売上創出 (Ruby, Golang, Vue.js)</li>
+                                    <li>人事管理SaaSのAPI開発（2020/01 - 2020/07）: 詳細設計/開発/結合テスト (Ruby)</li>
+                                    <li>保育/家事代行サービスのプラットフォーム開発（2020/01 - 2020/07）: 詳細設計/開発/結合テスト (Ruby)</li>
                                 </ul>
                             </div>
                             <div class="tech-stack">
                                 <span class="tech-tag">Ruby</span>
                                 <span class="tech-tag">Golang</span>
-                                <span class="tech-tag">Rails</span>
-                                <span class="tech-tag">AWS</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">Vue.js / Nuxt.js</span>
+                                <span class="tech-tag">AWS (Fargate, Amplify, Cognito)</span>
+                                <span class="tech-tag">Docker</span>
+                                <span class="tech-tag">MySQL</span>
                             </div>
                         </div>
 
@@ -805,19 +871,22 @@
                             <div class="timeline-dot"></div>
                             <div class="career-header">
                                 <span class="company">株式会社オフィスバンク</span>
-                                <span class="period">2018/05 - 2020/01</span>
+                                <span class="period">2018/06 - 2020/01</span>
                             </div>
-                            <div class="role">情報メディアデザイン部</div>
+                            <div class="role">開発チーム立ち上げ責任者</div>
                             <div class="career-details">
                                 <ul>
-                                    <li>社内向け物件管理システムの内製化・バックエンド開発</li>
-                                    <li>社内初エンジニア組織の立ち上げ</li>
+                                    <li>外注していた社内営業向け不動産管理システムの内製化を主導し、社内システムを完全リプレイス</li>
+                                    <li>エンジニア5名・QAエンジニア1名の進捗管理/タスク管理、予算に沿ったリリースマイルストーンの作成</li>
+                                    <li>営業の要望を吸い上げシステムに落とし込む開発フローを確立</li>
                                 </ul>
                             </div>
                             <div class="tech-stack">
                                 <span class="tech-tag">Ruby</span>
-                                <span class="tech-tag">Rails</span>
+                                <span class="tech-tag">JavaScript</span>
                                 <span class="tech-tag">AWS</span>
+                                <span class="tech-tag">Docker</span>
+                                <span class="tech-tag">MySQL</span>
                             </div>
                         </div>
 
@@ -828,11 +897,12 @@
                                 <span class="company">NPO法人SAMURAI MEETUPS</span>
                                 <span class="period">2014/04 - 2018/04</span>
                             </div>
-                            <div class="role">Marketing Team</div>
+                            <div class="role">設立・事業運営</div>
                             <div class="career-details">
                                 <ul>
-                                    <li>Webメディア運営・Web広告ディレクション</li>
-                                    <li>訪日旅行者向けツアー企画・運営</li>
+                                    <li>大学卒業後、訪日外国人向けNPO法人を設立し事業運営</li>
+                                    <li>訪日外国人向け体験ツアーの運営・管理。日本の伝統文化を担う職人と海外顧客を結びつける新規事業を推進</li>
+                                    <li>海外向けオウンドメディアサイトの立ち上げからWebマーケティングの企画運営まで幅広く担当</li>
                                 </ul>
                             </div>
                         </div>
@@ -880,7 +950,7 @@
         </section>
 
         <footer>
-            <p>&copy; 2025 Ito Tatsuaki. All rights reserved.</p>
+            <p>&copy; 2026 Ito Tatsuaki. All rights reserved.</p>
         </footer>
     </div>
 
