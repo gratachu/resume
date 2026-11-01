@@ -582,11 +582,11 @@
                 <div class="profile-content">
                     <h3>Ito Tatsuaki</h3>
                     <div class="profile-bio">
-                        <p>Webアプリケーション開発を軸に、バックエンド設計・実装のリード、技術的意思決定、開発チームの立ち上げを経験。大学卒業後に訪日外国人向けNPO法人を設立し事業運営を経験した後エンジニアへ転身。法人向け不動産仲介会社でのエンジニアチーム立ち上げ、フリーランス、株式会社グロービスの正社員を経て、現在はグロービスとWEDの2社に業務委託で参画。グロービスではBtoB SaaS（法人向け動画学習サービス）の開発、WEDではエンジニア採用とAIを活用した業務改善に取り組んでいます。
+                        <p>Webアプリケーション開発を軸に、バックエンド設計・実装のリード、技術的意思決定、開発チームの立ち上げを経験。大学卒業後に訪日外国人向けNPO法人を設立し事業運営を経験した後エンジニアへ転身。法人向け不動産仲介会社でのエンジニアチーム立ち上げ、フリーランス、株式会社グロービスの正社員を経て、現在はグロービスとWEDの2社に業務委託で参画。グロービスではBtoB SaaS（法人向け動画学習サービス）の開発、WEDではWeb開発・クラウド基盤の改善、業務課題の整理・仕様検討、採用業務の自動化に取り組んでいます。
                         </p>
                         <p>直近4年間はリードエンジニアとしてデータモデル設計・アーキテクチャ選定・実装を主導しながらスクラムマスターを兼務。約3億行の学習記録テーブルを扱う集計基盤の設計や、高頻度デプロイ環境（1日10〜30回）と両立するリアルタイム同期基盤のマルチクラウド判断など、ビジネスリスクを踏まえた技術的意思決定を担当。生成AIの実務活用も自ら推進し、Claude
                             Codeを活用した高速プロトタイピング文化を社内で立ち上げ、半年で85機能のプロトタイプ開発を主導。スクラムマスターとしては開発リードタイムを60時間から37時間へ短縮（社内最速）。</p>
-                        <p>AI活用では、単発のコード生成にとどまらず、業務の分解、役割を分けたエージェントの設計、人による検証、再利用可能な手順の整備まで担当。グロービスでのセキュリティ自己点検・デザイン検証・意思決定の自動集約と、WEDでの採用業務の自動化を通じ、現場の業務フローにAIを組み込んでいます。</p>
+                        <p>AI活用では、単発のコード生成にとどまらず、業務の分解、役割を分けたエージェントの設計、人による検証、再利用可能な手順の整備まで担当。グロービスでのセキュリティ自己点検・デザイン検証・意思決定の自動集約と、WEDでの採用フローの自動化を通じ、現場の業務フローにAIを組み込んでいます。</p>
                     </div>
 
                     <div class="tags-group">
@@ -828,13 +828,71 @@
                         <a href="https://wed.company/" target="_blank" class="company">株式会社WED（業務委託）</a>
                         <span class="period">2025/05 - Present</span>
                     </div>
-                    <div class="role">エンジニア採用 / 業務改善</div>
+                    <div class="role">Web開発 / クラウドインフラ / 業務改善・仕様検討 / エンジニア採用</div>
                     <div class="career-details">
                         <ul>
                             <li>エンジニア採用の候補者ソーシングとスカウト業務を担当</li>
                             <li>SRE・PdM・デザイナー向けの採用スカウト文、候補者評価基準、エンジニア向け採用資料の作成・改善に携わる</li>
                             <li>AIを活用した採用業務の自動化と、人事オペレーションの改善を推進</li>
                         </ul>
+                    </div>
+
+                    <div class="pj-list">
+                        <div class="pj-item">
+                            <div class="pj-header">
+                                <span class="pj-title">ターゲティング業務の簡素化とデータ処理基盤の移行</span>
+                                <span class="pj-period">2026/08 - 2026/10</span>
+                            </div>
+                            <div class="pj-meta">Rails / Next.js / TypeScript / BigQuery / Cloud Run / Terraform</div>
+                            <div class="career-details">
+                                <ul>
+                                    <li>エンジニアに依存していたキャンペーン対象ユーザーの設定業務を分解し、SQLの識別子手入力を不要にするバックエンド改修と、管理画面からBigQueryビューを作成する機能を実装</li>
+                                    <li>Cloud ComposerのDAG 2本をCloud Run Jobへ移行。BigQueryからのCSV出力、Cloud Storageへの保存、Pub/Subによる後続処理の起動をTypeScriptで実装</li>
+                                    <li>Terraformで実行用サービスアカウント・ストレージ・IAM権限を整備。出力データの突き合わせ、段階的な有効化、本番切替まで担当。2026年10月に本番の新経路を有効化</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="pj-item">
+                            <div class="pj-header">
+                                <span class="pj-title">メンテナンス切替基盤の構築</span>
+                                <span class="pj-period">2026/09 - Present</span>
+                            </div>
+                            <div class="pj-meta">Cloudflare Workers / TypeScript / GitHub Actions</div>
+                            <div class="career-details">
+                                <ul>
+                                    <li>メディア基盤のメンテナンス切替プロジェクトをリードし、利用者向けの表示、API応答、切替手順、環境ごとの検証項目を整理</li>
+                                    <li>Cloudflare WorkersとGitHub Actionsによる切替基盤を整備。HTML / JSONの503応答、メンテナンス期間の表示、スマートフォン向けの表示改善を実装</li>
+                                    <li>3環境へのデプロイとsandboxのON/OFF検証を実施。後続の改善としてCIのシークレット出力をマスクする修正も実装</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="pj-item">
+                            <div class="pj-header">
+                                <span class="pj-title">採用フローの自動化とAI活用</span>
+                                <span class="pj-period">2026/08 - Present</span>
+                            </div>
+                            <div class="pj-meta">Google Apps Script / HERP API / Notion API / Claude</div>
+                            <div class="career-details">
+                                <ul>
+                                    <li>HERPからNotionへ応募情報と履歴書・職務経歴書を同期する仕組みを実装。API連携、項目の対応付け、重複作成の防止、失敗時の再実行を設計</li>
+                                    <li>前日・当日分を1日2回取得し、カジュアル面談・一次選考に進んだ応募を対象にする処理を追加</li>
+                                    <li>採用担当者が操作できること、費用、運用の属人化を基準に実行基盤を比較し、取得・同期とAIによる書類要約・評価の役割を分けて工程を設計</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="pj-item">
+                            <div class="pj-header">
+                                <span class="pj-title">業務課題の整理・仕様検討（PdM関連業務）</span>
+                                <span class="pj-period">2026/09 - Present</span>
+                            </div>
+                            <div class="pj-meta">業務フロー調査 / 要件整理 / 段階導入の設計</div>
+                            <div class="career-details">
+                                <ul>
+                                    <li>キャンペーンの完全終了に関する業務フローと既存実装を調査し、運用と仕様の食い違い、再開時の扱い、補填・還元・請求への影響を整理</li>
+                                    <li>関係者とのレビューに向けて、未決事項と判断が必要な点を明示し、ガード処理・通知・管理APIを段階的に導入する工程を設計。現在は仕様検討・設計段階</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
